@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>selection</title>
+    <g id="🧠-Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="selection" fill="#333333">
+            <rect id="boundbox" opacity="0" x="0" y="0" width="32" height="32"></rect>
+            <g transform="translate(0.300000, 0.300000)" fill-rule="nonzero">
+                <path d="M15.7,31.4 C7,31.4 1.77635684e-15,24.4 1.77635684e-15,15.7 C1.77635684e-15,7 7,0 15.7,0 C17.8,0 19.9,0.4 21.8,1.2 C22.4,1.5 22.7,2.1 22.4,2.7 C22.2,3.3 21.5,3.5 20.9,3.3 C19.2,2.6 17.5,2.2 15.7,2.2 C8.3,2.2 2.2,8.3 2.2,15.7 C2.2,23.1 8.2,29.2 15.7,29.2 C23.2,29.2 29.2,23.2 29.2,15.7 C29.2,15.1 29.7,14.6 30.3,14.6 C30.9,14.6 31.4,15.1 31.4,15.7 C31.4,24.4 24.4,31.4 15.7,31.4 Z" id="Path"></path>
+                <g id="Group" transform="translate(7.900000, 5.000000)">
+                    <path d="M7,16.1 C6.7,16.1 6.4,16 6.2,15.8 C5.8,15.4 5.8,14.6 6.2,14.2 L20,0.3 C20.4,-0.1 21.2,-0.1 21.6,0.3 C22,0.7 22,1.5 21.6,1.9 L7.8,15.8 C7.6,16 7.3,16.1 7,16.1 Z" id="Path"></path>
+                    <path d="M7,16.1 C6.7,16.1 6.4,16 6.2,15.8 L0.3,9.9 C-0.1,9.5 -0.1,8.7 0.3,8.3 C0.7,7.9 1.5,7.9 1.9,8.3 L7.8,14.2 C8.2,14.6 8.2,15.4 7.8,15.8 C7.6,16 7.3,16.1 7,16.1 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

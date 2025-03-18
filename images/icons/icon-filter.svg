@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>631754D9-2FE2-4459-8586-C8BD95EA75A5</title>
+    <defs>
+        <path d="M3.67934341,2.47383689 L11.5860125,12.759971 C11.6527284,12.8467645 11.6891464,12.9551872 11.6891464,13.0670182 L11.6891464,21.5865803 L13.3884454,19.7903923 L13.3884454,13.0670182 C13.3884454,12.9583789 13.4228174,12.8528601 13.4860927,12.7672497 L21.094039,2.47383689 L3.67934341,2.47383689 Z M10.7678397,13.239894 L2.35400478,2.29396562 C2.10940677,1.9757573 2.32363836,1.5 2.71152429,1.5 L22.0384918,1.5 C22.4222846,1.5 22.6377776,1.96700466 22.4014979,2.28668688 L14.3097521,13.2346716 L14.3097521,19.9920805 C14.3097521,20.1212193 14.2612192,20.2450689 14.1748299,20.3363838 L11.5542241,23.1064087 C11.2640287,23.4131502 10.7678397,23.1959034 10.7678397,22.7621054 L10.7678397,13.239894 Z" id="path-2"></path>
+    </defs>
+    <g id="Navigation-VD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-130.000000, -59.000000)">
+            <g id="icon_filter" transform="translate(130.000000, 59.000000)">
+                <g>
+                    <rect id="boundbox" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="icon-element" stroke="#112E51" stroke-width="0.5" fill="#112E51" fill-rule="nonzero" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

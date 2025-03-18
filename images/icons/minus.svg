@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>minus</title>
+    <g id="🧠-Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="minus" fill="#333333">
+            <rect id="boundbox" opacity="0" x="0" y="0" width="32" height="32"></rect>
+            <path d="M25,14.75 L7,14.75 C6.31192881,14.75 5.75,15.3119288 5.75,16 C5.75,16.6880712 6.31192881,17.25 7,17.25 L25,17.25 C25.6880712,17.25 26.25,16.6880712 26.25,16 C26.25,15.3119288 25.6880712,14.75 25,14.75 Z" id="Path" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

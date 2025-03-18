@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Atoms/Icons/tables-source</title>
+    <g id="Atoms/Icons/tables-source" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="boundbox" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <g id="icon-table-source" transform="translate(2.600000, 2.250000)">
+            <line x1="17.5" y1="5.6010238" x2="0.5" y2="5.6010238" id="Path" stroke="#323232" stroke-width="1.49999999" stroke-linecap="square" stroke-linejoin="round"></line>
+            <line x1="5.75" y1="11.6010238" x2="1" y2="11.6010238" id="Path" stroke="#323232" stroke-width="1.49999999" stroke-linecap="square" stroke-linejoin="round"></line>
+            <line x1="12.5" y1="6.1010238" x2="12.5" y2="8.6010238" id="Path" stroke="#323232" stroke-width="1.49999999" stroke-linecap="square" stroke-linejoin="round"></line>
+            <g id="table" transform="translate(9.351024, 9.101024) rotate(-90.000000) translate(-9.351024, -9.101024) translate(0.250000, -0.148976)" stroke="#323232" stroke-linejoin="round" stroke-width="1.5">
+                <path d="M15.2020477,0 L16.2020477,0 C17.3070477,0 18.2020477,0.895000004 18.2020477,2 L18.2020477,15" id="Path" stroke-linecap="round"></path>
+                <path d="M18.2020477,15 L18.2020477,16 C18.2020477,17.1050001 17.3070477,18 16.2020477,18 L14.0101798,18" id="Path" stroke-linecap="round"></path>
+                <path d="M14.3731798,18.0000001 L9.29976892,18.0000001" id="Path" stroke-linecap="square"></path>
+                <path d="M0,6.3989762 L0,2 C0,0.895000004 0.895000004,0 2,0 L15.5689029,0" id="Path" stroke-linecap="square"></path>
+            </g>
+            <g id="database" transform="translate(6.500000, 7.601024)" fill="#333333">
+                <path d="M13,8 L13,10.5 C13,11.8807119 10.0898509,13 6.5,13 C2.91014913,13 0,11.8807119 0,10.5 L0,8 C0,9.38071187 2.91014913,10.5 6.5,10.5 C10.0898509,10.5 13,9.38071187 13,8 Z" id="Path"></path>
+                <path d="M13,4 L13,6.5 C13,7.88071187 10.0898509,9 6.5,9 C2.91014913,9 0,7.88071187 0,6.5 L0,4 C0,5.38071187 2.91014913,6.5 6.5,6.5 C10.0898509,6.5 13,5.38071187 13,4 Z" id="Path"></path>
+                <ellipse id="Oval" cx="6.5" cy="2.5" rx="6.5" ry="2.5"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>
