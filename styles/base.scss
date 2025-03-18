@@ -1,0 +1,172 @@
+@use 'design-system/colors.module.scss' as *;
+@use 'variables.module.scss' as *;
+@use '../utilities/functions.scss' as *;
+
+// Base styles
+html {
+  overflow: hidden;
+}
+
+body {
+  background-color: $aqua-color-white;
+  color: $aqua-color-gray-800;
+  font-family: $aqua-font-family;
+  font-size: toRem(14);
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: toRem(2) solid $aqua-color-azul-500;
+    outline-offset: toRem(-2);
+  }
+  &:focus:not(:focus-visible) {
+    // Undo all the above focused element styles if the
+    // element has focus but the browser wouldn't normally
+    // show default focus styles
+
+    // Note that this works even in browsers that don’t
+    // support :focus-visible because although :not()
+    // supports pseudo-classes as part of its selector list,
+    // browsers will ignore the whole thing when using a
+    // pseudo-class they don’t understand/support, meaning
+    // the entire :focus:not(:focus-visible) { ... }
+    // block is never applied.
+
+    outline: none;
+    outline-offset: 0;
+  }
+}
+
+hr {
+  border: toRem(1) solid $aqua-color-steel-700;
+  border-bottom: none;
+}
+
+// Hyperlink
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $aqua-color-vivid-blue;
+  background-color: transparent;
+  border-color: transparent;
+  &[uppercase] {
+    text-transform: uppercase;
+  }
+  &[capitalize] {
+    text-transform: capitalize;
+  }
+  &:hover {
+    color: $aqua-color-vivid-blue-dark;
+    text-decoration-line: underline;
+  }
+  &[disabled],
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+// Buttons
+button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+// Visually hidden text for screen readers ONLY
+.aqua-screenreader-only {
+  position: absolute;
+  left: toRem(-10000);
+  top: auto;
+  width: toRem(1);
+  height: toRem(1);
+  overflow: hidden;
+}
+
+// Some helpful utility attributes
+
+*[aqua-relative] {
+  position: relative;
+}
+
+*[aqua-fill-to-parent] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+*[aqua-pin-to-parent] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// Custom scrollbars
+
+::-webkit-scrollbar {
+  width: toRem(20);
+  height: toRem(20);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: toRem(20);
+  border: toRem(6) solid transparent;
+  background-clip: content-box;
+  min-height: toRem(50);
+  &:hover {
+    background-color: #a8bbbf;
+  }
+  &:not(:horizontal) {
+    width: toRem(20);
+  }
+  &:horizontal {
+    height: toRem(20);
+  }
+}
+
+// Remove up/down arrows on numerical inputs
+
+// Chrome, Safari, Edge, Opera
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Firefox
+input[type='number'] {
+  -moz-appearance: textfield !important;
+}
+
+// Global "glass" effect
+.aqua-glass {
+  border: toRem(1) solid $aqua-color-white;
+  backdrop-filter: saturate(40%) blur(#{toRem(14)});
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: translateZ(0);
+}
+// Fallback for browsers that do not support backdrop-filter (noteably, Firefox)
+@supports not (backdrop-filter: saturate(40%) blur(#{toRem(14)})) {
+  .aqua-glass {
+    background-color: $aqua-color-white;
+  }
+}
+
+.aqua-fullheight {
+  height: 100%;
+}
+
+.aqua-fullwidth {
+  width: 100%;
+}

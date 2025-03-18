@@ -1,0 +1,48 @@
+@use 'design-system/colors.module.scss' as *;
+
+.aqua-placeholder {
+  background-color: $aqua-color-white;
+  overflow: hidden;
+  position: relative;
+  &:before {
+    -webkit-animation: aquaPlaceholderAnimation 2s linear infinite;
+    animation: aquaPlaceholderAnimation 2s linear infinite;
+    background: linear-gradient(
+        90deg,
+        hsla(0, 0%, 100%, 0) 46%,
+        hsla(0, 0%, 100%, 0.35) 50%,
+        hsla(0, 0%, 100%, 0) 54%
+      )
+      50% 50%;
+    bottom: 0;
+    content: ' ';
+    left: 50%;
+    margin-left: -250%;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 500%;
+    z-index: 1;
+  }
+  .aqua-placeholder-item {
+    background-color: $aqua-color-primary-50;
+  }
+}
+
+@-webkit-keyframes aquaPlaceholderAnimation {
+  0% {
+    transform: translate3d(-30%, 0, 0);
+  }
+  to {
+    transform: translate3d(30%, 0, 0);
+  }
+}
+@keyframes aquaPlaceholderAnimation {
+  0% {
+    transform: translate3d(-30%, 0, 0);
+  }
+  to {
+    transform: translate3d(30%, 0, 0);
+  }
+}

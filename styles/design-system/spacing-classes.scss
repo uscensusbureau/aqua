@@ -1,0 +1,166 @@
+@use './breakpoints.scss?inline' as *;
+
+// Margins
+@for $i from 0 through 16 {
+  $space: calc(($i * 4) / 16);
+  .ma-#{$i} {
+    margin: #{$space}rem;
+  }
+  .mt-#{$i} {
+    margin-top: #{$space}rem;
+  }
+  .mr-#{$i} {
+    margin-right: #{$space}rem;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$space}rem;
+  }
+  .ml-#{$i} {
+    margin-left: #{$space}rem;
+  }
+  .mx-#{$i} {
+    margin-right: #{$space}rem;
+    margin-left: #{$space}rem;
+  }
+  .my-#{$i} {
+    margin-top: #{$space}rem;
+    margin-bottom: #{$space}rem;
+  }
+  @each $size, $width in $aqua-breakpoints {
+    @media all and (min-width: #{$width}) {
+      .ma-#{$size}-#{$i} {
+        margin: #{$space}rem;
+      }
+      .mt-#{$size}-#{$i} {
+        margin-top: #{$space}rem;
+      }
+      .mr-#{$size}-#{$i} {
+        margin-right: #{$space}rem;
+      }
+      .mb-#{$size}-#{$i} {
+        margin-bottom: #{$space}rem;
+      }
+      .ml-#{$size}-#{$i} {
+        margin-left: #{$space}rem;
+      }
+      .mx-#{$size}-#{$i} {
+        margin-right: #{$space}rem;
+        margin-left: #{$space}rem;
+      }
+      .my-#{$size}-#{$i} {
+        margin-top: #{$space}rem;
+        margin-bottom: #{$space}rem;
+      }
+    }
+  }
+}
+
+// Negative Margins
+@for $i from 0 through 16 {
+  $space: calc(($i * 4) / 16);
+  .ma-n#{$i} {
+    margin: -#{$space}rem;
+  }
+  .mt-n#{$i} {
+    margin-top: -#{$space}rem;
+  }
+  .mr-n#{$i} {
+    margin-right: -#{$space}rem;
+  }
+  .mb-n#{$i} {
+    margin-bottom: -#{$space}rem;
+  }
+  .ml-n#{$i} {
+    margin-left: -#{$space}rem;
+  }
+  .mx-n#{$i} {
+    margin-right: -#{$space}rem;
+    margin-left: -#{$space}rem;
+  }
+  .my-n#{$i} {
+    margin-top: -#{$space}rem;
+    margin-bottom: -#{$space}rem;
+  }
+  @each $size, $width in $aqua-breakpoints {
+    @media all and (min-width: #{$width}) {
+      .ma-#{$size}-n#{$i} {
+        margin: -#{$space}rem;
+      }
+      .mt-#{$size}-n#{$i} {
+        margin-top: -#{$space}rem;
+      }
+      .mr-#{$size}-n#{$i} {
+        margin-right: -#{$space}rem;
+      }
+      .mb-#{$size}-n#{$i} {
+        margin-bottom: -#{$space}rem;
+      }
+      .ml-#{$size}-n#{$i} {
+        margin-left: -#{$space}rem;
+      }
+      .mx-#{$size}-n#{$i} {
+        margin-right: -#{$space}rem;
+        margin-left: -#{$space}rem;
+      }
+      .my-#{$size}-n#{$i} {
+        margin-top: -#{$space}rem;
+        margin-bottom: -#{$space}rem;
+      }
+    }
+  }
+}
+
+// Padding
+@for $i from 0 through 16 {
+  $space: calc(($i * 4) / 16);
+  .pa-#{$i} {
+    padding: #{$space}rem;
+  }
+  .pt-#{$i} {
+    padding-top: #{$space}rem;
+  }
+  .pr-#{$i} {
+    padding-right: #{$space}rem;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$space}rem;
+  }
+  .pl-#{$i} {
+    padding-left: #{$space}rem;
+  }
+  .px-#{$i} {
+    padding-right: #{$space}rem;
+    padding-left: #{$space}rem;
+  }
+  .py-#{$i} {
+    padding-top: #{$space}rem;
+    padding-bottom: #{$space}rem;
+  }
+  @each $size, $width in $aqua-breakpoints {
+    @media all and (min-width: #{$width}) {
+      .pa-#{$size}-#{$i} {
+        padding: #{$space}rem;
+      }
+      .pt-#{$size}-#{$i} {
+        padding-top: #{$space}rem;
+      }
+      .pr-#{$size}-#{$i} {
+        padding-right: #{$space}rem;
+      }
+      .pb-#{$size}-#{$i} {
+        padding-bottom: #{$space}rem;
+      }
+      .pl-#{$size}-#{$i} {
+        padding-left: #{$space}rem;
+      }
+      .px-#{$size}-#{$i} {
+        padding-right: #{$space}rem;
+        padding-left: #{$space}rem;
+      }
+      .py-#{$size}-#{$i} {
+        padding-top: #{$space}rem;
+        padding-bottom: #{$space}rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+// Design System Colors
+
+// Primary Colors
+$aqua-color-primary-50: #e6ebf0;
+$aqua-color-primary-100: #d7dfe8;
+$aqua-color-primary-200: #97abc2;
+$aqua-color-primary-300: #708aa9;
+$aqua-color-primary-400: #507198;
+$aqua-color-primary-500: #2c598a;
+$aqua-color-primary-600: #255282;
+$aqua-color-primary-700: #1c4876;
+$aqua-color-primary-800: #163f69;
+$aqua-color-primary-900: #112e51;
+
+// Secondary Colors
+$aqua-color-robin-50: #cdedf2;
+$aqua-color-robin-100: #a9e3ec;
+$aqua-color-robin-200: #7ad4e2;
+$aqua-color-robin-300: #4ed0e5;
+$aqua-color-robin-400: #27c6de;
+$aqua-color-robin-500: #07bcd8;
+$aqua-color-robin-600: #05acc5;
+$aqua-color-robin-700: #0297aa;
+$aqua-color-robin-800: #008392;
+$aqua-color-robin-900: #00626f;
+
+// Tertiary Colors
+$aqua-color-steel-50: #ecf1f4;
+$aqua-color-steel-100: #d0dce1;
+$aqua-color-steel-200: #b3c4cc;
+$aqua-color-steel-300: #95acb7;
+$aqua-color-steel-400: #7e99a6;
+$aqua-color-steel-500: #678796;
+$aqua-color-steel-600: #5a7785;
+$aqua-color-steel-700: #4b636e;
+$aqua-color-steel-800: #3d5059;
+$aqua-color-steel-900: #2c3a41;
+
+// Accent 1
+$aqua-color-coral-50: #fbe9e7;
+$aqua-color-coral-100: #ffccbc;
+$aqua-color-coral-200: #ffab91;
+$aqua-color-coral-300: #ff8965;
+$aqua-color-coral-400: #ff6f43;
+$aqua-color-coral-500: #ff5622;
+$aqua-color-coral-600: #f4501e;
+$aqua-color-coral-700: #e64919;
+$aqua-color-coral-800: #d84215;
+$aqua-color-coral-900: #bf350c;
+
+// Accent 2
+$aqua-color-azul-50: #e3f2ff;
+$aqua-color-azul-100: #bbddff;
+$aqua-color-azul-200: #90c8ff;
+$aqua-color-azul-300: #62b2ff;
+$aqua-color-azul-400: #40a1ff;
+$aqua-color-azul-500: #2492ff;
+$aqua-color-azul-600: #2783f0;
+$aqua-color-azul-700: #2771dc;
+$aqua-color-azul-800: #265fca;
+$aqua-color-azul-900: #2340aa;
+
+// Accent 3
+$aqua-color-gold-50: #fffde7;
+$aqua-color-gold-100: #fff8c3;
+$aqua-color-gold-200: #fff39c;
+$aqua-color-gold-300: #ffee74;
+$aqua-color-gold-400: #ffe954;
+$aqua-color-gold-500: #ffe434;
+$aqua-color-gold-600: #ffd534;
+$aqua-color-gold-700: #ffbd2e;
+$aqua-color-gold-800: #fca528;
+$aqua-color-gold-900: #f87b1d;
+
+// Accent 4
+$aqua-color-forest-50: #e5f4e4;
+$aqua-color-forest-100: #c0e4be;
+$aqua-color-forest-200: #97d394;
+$aqua-color-forest-300: #69c368;
+$aqua-color-forest-400: #43b645;
+$aqua-color-forest-500: #00a91c;
+$aqua-color-forest-600: #009a12;
+$aqua-color-forest-700: #008900;
+$aqua-color-forest-800: #007800;
+$aqua-color-forest-900: #005a00;
+
+// Purples
+$aqua-color-purple-50: #ede7f6;
+$aqua-color-purple-100: #d1c4e9;
+$aqua-color-purple-200: #b39ddb;
+$aqua-color-purple-300: #9575cd;
+$aqua-color-purple-400: #7e57c2;
+$aqua-color-purple-500: #673ab7;
+$aqua-color-purple-600: #5e35b1;
+$aqua-color-purple-700: #512da8;
+$aqua-color-purple-800: #4527a0;
+$aqua-color-purple-900: #311b92;
+
+// Grey Scale
+$aqua-color-white: #ffffff;
+$aqua-color-gray-50: #f5f5f5;
+$aqua-color-gray-100: #eeeeee;
+$aqua-color-gray-200: #e3e3e3;
+$aqua-color-gray-300: #d1d1d1;
+$aqua-color-gray-400: #acacac;
+$aqua-color-gray-500: #8b8b8b;
+$aqua-color-gray-600: #646464;
+$aqua-color-gray-700: #515151;
+$aqua-color-gray-800: #333333;
+$aqua-color-gray-900: #131313;
+$aqua-color-black: #000000;
+
+// Theming Colors
+$aqua-color-warm-gray-lighter: #fafafa;
+$aqua-color-warm-gray-lite: #f8f8f8;
+$aqua-color-warm-gray-med-lite: #b4b4b4;
+$aqua-color-vivid-blue-hover: #d5e4f6;
+$aqua-color-vivid-blue-active: #c1d6f1;
+$aqua-color-vivid-blue: #2d72c7;
+$aqua-color-vivid-blue-dark: #215491;
+
+// Exported object for use of color values in Javascript
+:export {
+  // Primary Colors
+  aquaColorPrimary50: $aqua-color-primary-50;
+  aquaColorPrimary100: $aqua-color-primary-100;
+  aquaColorPrimary200: $aqua-color-primary-200;
+  aquaColorPrimary300: $aqua-color-primary-300;
+  aquaColorPrimary400: $aqua-color-primary-400;
+  aquaColorPrimary500: $aqua-color-primary-500;
+  aquaColorPrimary600: $aqua-color-primary-600;
+  aquaColorPrimary700: $aqua-color-primary-700;
+  aquaColorPrimary800: $aqua-color-primary-800;
+  aquaColorPrimary900: $aqua-color-primary-900;
+
+  // Secondary Colors
+  aquaColorRobin50: $aqua-color-robin-50;
+  aquaColorRobin100: $aqua-color-robin-100;
+  aquaColorRobin200: $aqua-color-robin-200;
+  aquaColorRobin300: $aqua-color-robin-300;
+  aquaColorRobin400: $aqua-color-robin-400;
+  aquaColorRobin500: $aqua-color-robin-500;
+  aquaColorRobin600: $aqua-color-robin-600;
+  aquaColorRobin700: $aqua-color-robin-700;
+  aquaColorRobin800: $aqua-color-robin-800;
+  aquaColorRobin900: $aqua-color-robin-900;
+
+  // Tertiary Colors
+  aquaColorSteel50: $aqua-color-steel-50;
+  aquaColorSteel100: $aqua-color-steel-100;
+  aquaColorSteel200: $aqua-color-steel-200;
+  aquaColorSteel300: $aqua-color-steel-300;
+  aquaColorSteel400: $aqua-color-steel-400;
+  aquaColorSteel500: $aqua-color-steel-500;
+  aquaColorSteel600: $aqua-color-steel-600;
+  aquaColorSteel700: $aqua-color-steel-700;
+  aquaColorSteel800: $aqua-color-steel-800;
+  aquaColorSteel900: $aqua-color-steel-900;
+
+  // Accent 1
+  aquaColorCoral50: $aqua-color-coral-50;
+  aquaColorCoral100: $aqua-color-coral-100;
+  aquaColorCoral200: $aqua-color-coral-200;
+  aquaColorCoral300: $aqua-color-coral-300;
+  aquaColorCoral400: $aqua-color-coral-400;
+  aquaColorCoral500: $aqua-color-coral-500;
+  aquaColorCoral600: $aqua-color-coral-600;
+  aquaColorCoral700: $aqua-color-coral-700;
+  aquaColorCoral800: $aqua-color-coral-800;
+  aquaColorCoral900: $aqua-color-coral-900;
+
+  // Accent 2
+  aquaColorAzul50: $aqua-color-azul-50;
+  aquaColorAzul100: $aqua-color-azul-100;
+  aquaColorAzul200: $aqua-color-azul-200;
+  aquaColorAzul300: $aqua-color-azul-300;
+  aquaColorAzul400: $aqua-color-azul-400;
+  aquaColorAzul500: $aqua-color-azul-500;
+  aquaColorAzul600: $aqua-color-azul-600;
+  aquaColorAzul700: $aqua-color-azul-700;
+  aquaColorAzul800: $aqua-color-azul-800;
+  aquaColorAzul900: $aqua-color-azul-900;
+
+  // Accent 3
+  aquaColorGold50: $aqua-color-gold-50;
+  aquaColorGold100: $aqua-color-gold-100;
+  aquaColorGold200: $aqua-color-gold-200;
+  aquaColorGold300: $aqua-color-gold-300;
+  aquaColorGold400: $aqua-color-gold-400;
+  aquaColorGold500: $aqua-color-gold-500;
+  aquaColorGold600: $aqua-color-gold-600;
+  aquaColorGold700: $aqua-color-gold-700;
+  aquaColorGold800: $aqua-color-gold-800;
+  aquaColorGold900: $aqua-color-gold-900;
+
+  // Accent 4
+  aquaColorForest50: $aqua-color-forest-50;
+  aquaColorForest100: $aqua-color-forest-100;
+  aquaColorForest200: $aqua-color-forest-200;
+  aquaColorForest300: $aqua-color-forest-300;
+  aquaColorForest400: $aqua-color-forest-400;
+  aquaColorForest500: $aqua-color-forest-500;
+  aquaColorForest600: $aqua-color-forest-600;
+  aquaColorForest700: $aqua-color-forest-700;
+  aquaColorForest800: $aqua-color-forest-800;
+  aquaColorForest900: $aqua-color-forest-900;
+
+  // Purples
+  aquaColorPurple50: $aqua-color-purple-50;
+  aquaColorPurple100: $aqua-color-purple-100;
+  aquaColorPurple200: $aqua-color-purple-200;
+  aquaColorPurple300: $aqua-color-purple-300;
+  aquaColorPurple400: $aqua-color-purple-400;
+  aquaColorPurple500: $aqua-color-purple-500;
+  aquaColorPurple600: $aqua-color-purple-600;
+  aquaColorPurple700: $aqua-color-purple-700;
+  aquaColorPurple800: $aqua-color-purple-800;
+  aquaColorPurple900: $aqua-color-purple-900;
+
+  // Grey Scale
+  aquaColorWhite: $aqua-color-white;
+  aquaColorGray50: $aqua-color-gray-50;
+  aquaColorGray100: $aqua-color-gray-100;
+  aquaColorGray200: $aqua-color-gray-200;
+  aquaColorGray300: $aqua-color-gray-300;
+  aquaColorGray400: $aqua-color-gray-400;
+  aquaColorGray500: $aqua-color-gray-500;
+  aquaColorGray600: $aqua-color-gray-600;
+  aquaColorGray700: $aqua-color-gray-700;
+  aquaColorGray800: $aqua-color-gray-800;
+  aquaColorGray900: $aqua-color-gray-900;
+  aquaColorBlack: $aqua-color-black;
+
+  // Theming Colors
+  aquaColorWarmGrayLighter: $aqua-color-warm-gray-lighter;
+  aquaColorWarmGrayMedLite: $aqua-color-warm-gray-med-lite;
+  aquaColorVividBlue: $aqua-color-vivid-blue;
+  aquaColorVividBlueDark: $aqua-color-vivid-blue-dark;
+  aquaColorVividBlueHover: $aqua-color-vivid-blue-hover;
+  aquaColorVividBlueActive: $aqua-color-vivid-blue-active;
+}

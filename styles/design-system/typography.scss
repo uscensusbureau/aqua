@@ -1,0 +1,78 @@
+@use 'colors.module.scss' as *;
+@use '../variables.module.scss' as *;
+@use '../../utilities/functions.scss' as *;
+
+// Design System Typography
+
+// Headings
+.h1,
+h1 {
+  font-size: toRem(45);
+  letter-spacing: toRem(-0.5);
+}
+
+.h2,
+h2 {
+  font-size: toRem(24);
+  letter-spacing: toRem(-0.25);
+}
+
+.h3,
+h3 {
+  font-size: toRem(20);
+  letter-spacing: 0;
+}
+
+.h4,
+h4 {
+  font-size: toRem(18);
+  letter-spacing: 0;
+}
+
+.h5,
+h5 {
+  font-size: toRem(16);
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: $aqua-font-weight-bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  &[heading] {
+    border-bottom: toRem(1) solid $aqua-color-primary-900;
+  }
+  &[uppercase] {
+    text-transform: uppercase;
+  }
+  &[capitalize] {
+    text-transform: capitalize;
+  }
+  &[wrap] {
+    white-space: normal;
+  }
+}
+
+.aqua-text-body {
+  font-size: toRem(14);
+}
+
+.aqua-text-caption {
+  font-size: toRem(12);
+  letter-spacing: 0;
+  line-height: toRem(18);
+}
+
+.aqua-text-small-caption {
+  font-size: toRem(10);
+}
+
+.aqua-bold {
+  font-weight: $aqua-font-weight-bold;
+}

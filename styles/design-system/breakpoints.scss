@@ -1,0 +1,9 @@
+@use '../../utilities/functions.scss' as *;
+
+$aqua-breakpoints: (
+  'xs': 0,
+  'sm': toRem(600),
+  'md': toRem(960),
+  'lg': toRem(1280),
+  'xl': toRem(1920)
+);

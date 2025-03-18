@@ -1,0 +1,39 @@
+{
+  "name": "aqua",
+  "version": "1.0.0",
+  "description": "",
+  "main": "aqua.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
+  },
+  "author": {
+    "name": "CEDSCI EDDE (Zach's Magic Workshop)",
+    "email": "devuiteam@uscensus.onmicrosoft.com"
+  },
+  "contributors": [
+    "Van Hoang",
+    "Alan Thompson",
+    "Peter Hirschberg",
+    "Jeremy Koulish",
+    "Daniel Belchamber",
+    "Benjamin Liden",
+    "Golda Meir Chiong",
+    "Sunny Yuen",
+    "Yong Lee",
+    "David Mahen",
+    "Yamilka De Jesus",
+    "Sean Stacho"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/addon-storysource": "^6.0.28",
+    "@storybook/vue": "^6.0.28",
+    "babel-loader": "^8.2.1",
+    "react-is": "^17.0.1"
+  }
+}

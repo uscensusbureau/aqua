@@ -1,0 +1,19 @@
+@use './breakpoints.scss?inline' as *;
+
+// 12 Column Layout
+
+$aqua-columns: 12 !default;
+
+@each $size, $width in $aqua-breakpoints {
+  @media all and (min-width: #{$width}) {
+    $n: $aqua-columns;
+    @while $n > 0 {
+      .aqua-flex.#{$size}#{$n} {
+        flex-basis: calc($n / $aqua-columns) * 100%;
+        flex-grow: 0;
+        max-width: calc($n / $aqua-columns) * 100%;
+      }
+      $n: $n - 1;
+    }
+  }
+}
