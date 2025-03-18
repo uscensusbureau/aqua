@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>8CC7639F-8E42-4B8F-B5DE-A60A053933EE</title>
+    <g id="🧠-Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_add-to-list">
+            <g>
+                <rect id="boundbox" fill="#FFFFFF" opacity="0" x="0" y="0" width="32" height="32"></rect>
+                <path d="M23.7272727,15 L8.27272727,15 C7.84596178,15 7.5,15.3357864 7.5,15.75 C7.5,16.1642136 7.84596178,16.5 8.27272727,16.5 L23.7272727,16.5 C24.1540382,16.5 24.5,16.1642136 24.5,15.75 C24.5,15.3357864 24.1540382,15 23.7272727,15 Z" id="Path" stroke="#008392" stroke-width="0.35" fill="#112E51" fill-rule="nonzero"></path>
+                <path d="M23.7272727,15 L8.27272727,15 C7.84596178,15 7.5,15.3357864 7.5,15.75 C7.5,16.1642136 7.84596178,16.5 8.27272727,16.5 L23.7272727,16.5 C24.1540382,16.5 24.5,16.1642136 24.5,15.75 C24.5,15.3357864 24.1540382,15 23.7272727,15 Z" id="Path" stroke="#008392" stroke-width="0.35" fill="#112E51" fill-rule="nonzero" transform="translate(16.000000, 15.750000) rotate(90.000000) translate(-16.000000, -15.750000) "></path>
+                <path d="M16,1 C7.71572875,1 1,7.71572875 1,16 C1,24.2842712 7.71572875,31 16,31 C24.2842712,31 31,24.2842712 31,16 C31,7.71572875 24.2842712,1 16,1 Z" id="Path" stroke="#008392" stroke-width="1.7" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

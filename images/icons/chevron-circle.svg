@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>B0AC5F22-506B-4772-97B1-2F7D82744BC1</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.200000 0 0 0 0 0.200000 0 0 0 0 0.200000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-2">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.027451 0 0 0 0 0.423529 0 0 0 0 0.474510 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-3">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.027451 0 0 0 0 0.423529 0 0 0 0 0.474510 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-4">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.027451 0 0 0 0 0.423529 0 0 0 0 0.474510 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Navigation-VD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="▪️Elements/Card/Card-Button" transform="translate(-176.000000, -59.000000)" filter="url(#filter-1)">
+            <g transform="translate(176.000000, 59.000000)" id="Icon" filter="url(#filter-2)">
+                <g>
+                    <g filter="url(#filter-3)" id="icon_">
+                        <g>
+                            <rect id="boundbox" fill="#FFFFFF" opacity="0" x="0" y="0" width="24" height="24"></rect>
+                            <g id="Group-11" transform="translate(0.750000, 0.750000)" stroke="#112E51" stroke-width="1.2375">
+                                <circle id="Oval" cx="11.25" cy="11.25" r="10.63125"></circle>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="icon_chevron-right" transform="translate(6.750000, 6.000000)" filter="url(#filter-4)">
+                        <g>
+                            <rect id="boundbox" fill="#FFFFFF" opacity="0" x="0" y="0" width="12" height="12"></rect>
+                            <path d="M5.40444926,9.01841284 L0.731528296,4.34334178 C0.506157235,4.11786818 0.506157235,3.75231853 0.731528296,3.52686899 L1.27654972,2.98159959 C1.50153607,2.75651088 1.86617409,2.75607788 2.09168942,2.98063737 L5.81251202,6.68571249 L9.53331058,2.98063737 C9.75882591,2.75607788 10.1234639,2.75651088 10.3484743,2.98159959 L10.8934717,3.52686899 C11.1188428,3.75234259 11.1188428,4.11789223 10.8934717,4.34334178 L6.22057479,9.01841284 C5.99520372,9.24386239 5.62982032,9.24386239 5.40444926,9.01841284" id="Chevron-Down" fill="#112E51" transform="translate(5.812500, 6.000000) rotate(270.000000) translate(-5.812500, -6.000000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

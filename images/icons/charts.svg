@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Atoms/Icons/charts</title>
+    <g id="Atoms/Icons/charts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="charts">
+            <rect id="boundbox" fill="#333333" opacity="0" x="0" y="0" width="24" height="24"></rect>
+            <g id="Group" transform="translate(3.000000, 2.710809)" stroke="#333333" stroke-linecap="square" stroke-linejoin="round">
+                <line x1="4.55555561" y1="8.4003025" x2="16" y2="8.28919134" id="Path" stroke-width="2.5"></line>
+                <line x1="4.55555561" y1="13.2891913" x2="13.4444445" y2="13.2891913" id="Path" stroke-width="2.5"></line>
+                <line x1="4.55555561" y1="3.51919134" x2="7.88888894" y2="3.51919134" id="Path" stroke-width="2.5"></line>
+                <path d="M-0.441533913,18.2665603 L-0.441533913,2.44153391 C-0.441533913,1.33653392 0.453466091,0.441533913 1.55846609,0.441533913 L18.2665603,0.441533913" id="Path" stroke-width="1.5" transform="translate(8.912513, 9.354047) rotate(-90.000000) translate(-8.912513, -9.354047) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
