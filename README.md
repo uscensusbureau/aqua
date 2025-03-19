@@ -10,6 +10,10 @@ The use of Aqua allows for rapid implementation of UX designs and a consistent u
 
 There are many planned updates and improvements, including ultimately making Aqua an NPM package. Those will be coming in future iterations.
 
+---
+
+Issues:
+
 We appreciate any feedback you would like to provide us; please post any questions that you may have in the GitHub issues section.
 
 ---
