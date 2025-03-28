@@ -117,7 +117,7 @@ The AquaAccordion component is useful for reducing vertical space that have larg
 
 AquaBanner is used to display messages as a wide strip. The component has several modes; `info`, `warn`, and `error`. The icon and color scheme of the banner changes depending on the `type`.
 
-![](documentation_images\AquaBanner.png)
+![](/documentation_images/AquaBanner.png)
 
 #### Properties
 
@@ -139,7 +139,7 @@ AquaBanner is used to display messages as a wide strip. The component has severa
 
 The AquaBreadcrumbs component is used as a navigational helper and to display hierarchy for pages.
 
-![](documentation_images\AquaBreadcrumbs.png)
+![](/documentation_images/AquaBreadcrumbs.png)
 
 #### Properties
 
@@ -151,7 +151,7 @@ The AquaBreadcrumbs component is used as a navigational helper and to display hi
 
 AquaButton replaces the standard html button with a themed equivalent. AquaButton has 3 variations; `primary`, `secondary`, and `tertiary`.
 
-![](documentation_images\AquaButton.png)
+![](/documentation_images/AquaButton.png)
 
 #### Attributes
 
@@ -183,7 +183,7 @@ AquaButtonBar contains several segmented buttons forming a bar. Only one button 
 
 The component can also be configured to show all items within a sliding container that the user can drag left or right.
 
-![](documentation_images\AquaButtonBar.png)
+![](/documentation_images/AquaButtonBar.png)
 
 #### Properties
 
@@ -209,7 +209,7 @@ The component can also be configured to show all items within a sliding containe
 
 AquaButtonRow is a layout component used for buttons at the bottom of a dialog. It will automatically align and pad the buttons within it appropriately.
 
-![](documentation_images\AquaButtonRow.png)
+![](/documentation_images/AquaButtonRow.png)
 
 <a id="AquaCard"></a>
 
@@ -233,7 +233,7 @@ AquaCard is a simple wrapper component that has a white background and various o
 
 AquaCarousel is used to display content panels within a left/right scrolling mechanism. Clickable left/right buttons on each end allow the user to scroll through the various panels within.
 
-![](documentation_images\AquaCarousel.png)
+![](/documentation_images/AquaCarousel.png)
 
 #### Properties
 
@@ -247,7 +247,7 @@ AquaCarousel is used to display content panels within a left/right scrolling mec
 
 AquaCheckbox replaces the standard html checkbox with a themed equivalent.
 
-![](documentation_images\AquaCheckbox.png)
+![](/documentation_images/AquaCheckbox.png)
 
 #### Properties
 
@@ -288,7 +288,7 @@ The AquaChip component is used to convey small pieces of information. They have 
 This component can be used by the **AquaChips**
 component which provides additional layout logic and other functionality.
 
-![](documentation_images\AquaChip.png)
+![](/documentation_images/AquaChip.png)
 
 #### Properties
 
@@ -310,7 +310,7 @@ component which provides additional layout logic and other functionality.
 
 A wrapper around a group of **AquaChip** components that provides optional wrapping and the ability to limit the number of chips shown. If the number of chips exceeds the amount of available space, a "MORE" button appears at the end of the list of chips.
 
-![](documentation_images\AquaChips.png)
+![](/documentation_images/AquaChips.png)
 
 #### Properties
 
@@ -330,7 +330,7 @@ A wrapper around a group of **AquaChip** components that provides optional wrapp
 
 For internal Aqua use only. Displays a round focus indicator on some interactive components (ex: checkboxes).
 
-![](documentation_images\AquaCircularFocusIndicator.png)
+![](/documentation_images/AquaCircularFocusIndicator.png)
 
 #### Properties
 
@@ -350,7 +350,7 @@ A graphical control element in the form of a small window that communicates info
 
 The dialog can be either `modal` or `modeless` depending on the options provided to it.
 
-![](documentation_images\AquaDialog.png)
+![](/documentation_images/AquaDialog.png)
 
 #### Properties
 
@@ -386,7 +386,7 @@ The dialog can be either `modal` or `modeless` depending on the options provided
 
 A small circular "badge" typically used to display a count (number of items selected for example).
 
-![](documentation_images\AquaDotIndicator.png)
+![](/documentation_images/AquaDotIndicator.png)
 
 #### Properties
 
@@ -404,7 +404,7 @@ A small circular "badge" typically used to display a count (number of items sele
 
 AquaDropdown replaces the standard html dropdown with a themed equivalent.
 
-![](documentation_images\AquaDropdown.png)
+![](/documentation_images/AquaDropdown.png)
 
 #### Properties
 
@@ -454,8 +454,8 @@ AquaDropdown replaces the standard html dropdown with a themed equivalent.
 
 A static text label that transforms into a text input control when clicked.
 
-![](documentation_images\AquaEditableLabel.png)
-![](documentation_images\AquaEditableLabel-edit.png)
+![](/documentation_images/AquaEditableLabel.png)
+![](/documentation_images/AquaEditableLabel-edit.png)
 
 #### Properties
 
@@ -583,7 +583,7 @@ Displays an icon in any color and size. The icon can be one of the built-in Aqua
 
 A menu component that forms a list of **AquaMenuItem** components. It also has an option to place a searchbar at the top of the items to search the items. The component provides keyboard navigation for the dropdown. It is also used internally by some Aqua components such as **AquaDropdown**.
 
-![](documentation_images\AquaMenu.png)
+![](/documentation_images/AquaMenu.png)
 
 #### Properties
 
@@ -627,7 +627,7 @@ Used interally by the **AquaMenu** component to abstract the items within the me
 
 A minimalistic searchbar ideal for mobile form-factors. **_May be deprecated in the future in favor of the nearly identical AquaSimpleSearchbar_**
 
-![](documentation_images\AquaMobileSearchbar.png)
+![](/documentation_images/AquaMobileSearchbar.png)
 
 #### Properties
 
@@ -665,7 +665,7 @@ A simple layout component that contains a vertical layout with two horizontal la
 
 A text input that accepts and validates numeric values.
 
-![](documentation_images\AquaNumberInput.png)
+![](/documentation_images/AquaNumberInput.png)
 
 #### Properties
 
@@ -709,7 +709,7 @@ A text input that accepts and validates numeric values.
 
 AquaPagination is used to visually represent the page numbers when there are multiple pages of results. It allows the user to select a page number and jump to that page. Used in conjunction with the **AquaPaginationControls** component.
 
-![](documentation_images\AquaPagination.png)
+![](/documentation_images/AquaPagination.png)
 
 #### Properties
 
@@ -747,7 +747,7 @@ Provides additional navigation aids for the **AquaPagination** component.
 
 AquaPopover is a container which displays over other elements on the page. A typical usage might be to appear below a toolbar button when it clicks to display contextual information. The popover will dismiss if users click anywhere outside the component.
 
-![](documentation_images\AquaPopover.png)
+![](/documentation_images/AquaPopover.png)
 
 #### Properties
 
@@ -777,7 +777,7 @@ AquaPopover is a container which displays over other elements on the page. A typ
 
 A progress bar that has a circular shape. It can either represent a value between 0 - 100 or be "indeterminate" when the amount of progress is unknown.
 
-![](documentation_images\AquaProgressCircular.png)
+![](/documentation_images/AquaProgressCircular.png)
 
 #### Properties
 
@@ -797,7 +797,7 @@ A progress bar that has a circular shape. It can either represent a value betwee
 
 A typical progress bar UI element. It can either represent a value between 0 - 100 or be "indeterminate" when the amount of progress is unknown.
 
-![](documentation_images\AquaProgressLinear.png)
+![](/documentation_images/AquaProgressLinear.png)
 
 #### Properties
 
@@ -815,7 +815,7 @@ A typical progress bar UI element. It can either represent a value between 0 - 1
 
 AquaRadio replaces the standard html radio button with a themed equivalent. Usually used in conjunction with the **AquaRadioGroup** component.
 
-![](documentation_images\AquaRadio.png)
+![](/documentation_images/AquaRadio.png)
 
 #### Properties
 
@@ -833,7 +833,7 @@ AquaRadio replaces the standard html radio button with a themed equivalent. Usua
 
 A wrapper around a group of **AquaRadio** components that provides both keyboard navigation and ensures the radio buttons within remain mutually exclusive.
 
-![](documentation_images\AquaRadioGroup.png)
+![](/documentation_images/AquaRadioGroup.png)
 
 #### Properties
 
@@ -851,7 +851,7 @@ A wrapper around a group of **AquaRadio** components that provides both keyboard
 
 Similar to a typical slider type component but has two draggable "thumb" elements that allows the user to select a range (minimum and maximum).
 
-![](documentation_images\AquaRangeSlider.png)
+![](/documentation_images/AquaRangeSlider.png)
 
 #### Properties
 
@@ -895,9 +895,9 @@ AquaScroller is a wrapper around **DynamicScroller**. Used internally by Aqua to
 
 A complex site searchbar. On Google Chrome browsers there is an optional dictation icon. Other optional icons may be added to the searchbar via the provided Vue `slots`. The component allows a user to enter, clear, and submit a text string. A dropdown appears when the searchbar is focused which allows for a list of suggested search terms based on the user's query.
 
-![](documentation_images\AquaSearchbar.png)
+![](/documentation_images/AquaSearchbar.png)
 
-![](documentation_images\AquaSearchbar-open.png)
+![](/documentation_images/AquaSearchbar-open.png)
 
 #### Properties
 
@@ -951,7 +951,7 @@ A complex site searchbar. On Google Chrome browsers there is an optional dictati
 
 AquaSheet is a type of "bottom drawer" that slides up from the bottom of the screen and contains content. It features a standard titlebar with a text heading and a dismiss button.
 
-![](documentation_images\AquaSheet.png)
+![](/documentation_images/AquaSheet.png)
 
 #### Properties
 
@@ -971,7 +971,7 @@ AquaSheet is a type of "bottom drawer" that slides up from the bottom of the scr
 
 A minimalistic searchbar ideal for adding trivial search functionality.
 
-![](documentation_images\AquaSimpleSearchbar.png)
+![](/documentation_images/AquaSimpleSearchbar.png)
 
 #### Properties
 
@@ -989,7 +989,7 @@ A minimalistic searchbar ideal for adding trivial search functionality.
 
 The component allows a user to use a slider type interface to select a value between 0 - 100.
 
-![](documentation_images\AquaSlider.png)
+![](/documentation_images/AquaSlider.png)
 
 #### Properties
 
@@ -1005,7 +1005,7 @@ The component allows a user to use a slider type interface to select a value bet
 
 The AquaSnackbar component is used to display a quick, temporary, closable notification message to the user. It can also be configured to auto-dismiss after a set interval.
 
-![](documentation_images\AquaSnackbar.png)
+![](/documentation_images/AquaSnackbar.png)
 
 #### Properties
 
@@ -1041,7 +1041,7 @@ A layout component that is used within the **AquaLayout** component to take up s
 
 An **AquaTable** provides a simple but lightweight way to display information in a grid of rows and columns.
 
-![](documentation_images\AquaTable.png)
+![](/documentation_images/AquaTable.png)
 
 #### Properties
 
@@ -1079,7 +1079,7 @@ Individual tab components used within the **AquaTabs** component.
 
 A tab control interface that allows multiple panels of content to be contained within a single window, using the tabs as a navigational widget for switching between them. The AquaTabs component is a container for a series of **AquaTab** components.
 
-![](documentation_images\AquaTabs.png)
+![](/documentation_images/AquaTabs.png)
 
 #### Properties
 
@@ -1093,7 +1093,7 @@ A tab control interface that allows multiple panels of content to be contained w
 
 Offers a way to display text that can auto-size to fit the specified amount of space.
 
-![](documentation_images\AquaText.png)
+![](/documentation_images/AquaText.png)
 
 #### Properties
 
@@ -1115,7 +1115,7 @@ Offers a way to display text that can auto-size to fit the specified amount of s
 
 AquaTextArea replaces the standard html textarea with a themed equivalent.
 
-![](documentation_images\AquaTextArea.png)
+![](/documentation_images/AquaTextArea.png)
 
 #### Properties
 
@@ -1157,7 +1157,7 @@ AquaTextArea replaces the standard html textarea with a themed equivalent.
 
 A single line text input field.
 
-![](documentation_images\AquaTextInput.png)
+![](/documentation_images/AquaTextInput.png)
 
 #### Properties
 
@@ -1217,7 +1217,7 @@ A single line text input field.
 
 An interactive toggle "switch" control, used for turning values on or off.
 
-![](documentation_images\AquaToggle.png)
+![](/documentation_images/AquaToggle.png)
 
 #### Properties
 
@@ -1241,7 +1241,7 @@ An interactive toggle "switch" control, used for turning values on or off.
 
 The AquaToolbar component allows for quick access to functions that are commonly used. It is represented by a horizontal row of **AquaToolbarButton** components.
 
-![](documentation_images\AquaToolbar.png)
+![](/documentation_images/AquaToolbar.png)
 
 #### Properties
 
@@ -1311,7 +1311,7 @@ The AquaToolbarButton component represents a single button to be displayed withi
 
 A small popup window that can display contextual information.
 
-![](documentation_images\AquaTooltip.png)
+![](/documentation_images/AquaTooltip.png)
 
 #### Properties
 
@@ -1329,7 +1329,7 @@ A small popup window that can display contextual information.
 
 Similar to Windows File Explorer, the AquaTreeView displays hierarchical data in a tree type structure. Items with subitems may be collapsed or expanded to reveal the child subitems. It also optionally allows for items to have checkboxes next to them for selecting items. Each item is an instance of an **AquaTreeViewItem** component.
 
-![](documentation_images\aquatreeview.png)
+![](/documentation_images/aquatreeview.png)
 
 #### Properties
 
