@@ -103,7 +103,7 @@
 
 The AquaAccordion component is useful for reducing vertical space that have large amounts of information. The component has multiple, collapsible/expandible vertical sections, but only displays one panel at a time.
 
-![](documentation_images\AquaAccordion.png)
+![](/documentation_images/AquaAccordion.png)
 
 #### Properties
 
