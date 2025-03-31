@@ -1,6 +1,6 @@
 # Aqua Software
 
-Version 1.2.0
+Version 1.2.1
 
 Aqua is a web-based UI component library built on top of the Vue.js framework. It was created in 2019 by the Center for Enterprise Dissemination Services and Consumer Innovation (CEDSCI) development team at the U.S. Census Bureau for use on data.census.gov website and has been in active development since. It is considered production-ready but, like most web development tools, is undergoing constant maintenance and improvements extending into the future.
 
