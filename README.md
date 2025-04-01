@@ -26,4 +26,4 @@ This library was developed as a collaborative effort. Contributions were made by
 
 Recommended Citation:
 
-U.S. Census Bureau, “Aqua Software,” 1.2.0 [GitHub], 2025, <https://github.com/uscensusbureau/aqua>, accessed on date.
+U.S. Census Bureau, “Aqua Software,” 1.2.1 [GitHub], 2025, <https://github.com/uscensusbureau/aqua>, accessed on date.
