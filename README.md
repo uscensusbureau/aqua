@@ -6,6 +6,8 @@ Aqua is a web-based UI component library built on top of the Vue.js framework. I
 
 Aqua provides a multitude of ready-to-use common UI components, such as buttons, checkboxes, dropdowns, tree views, etc. It also provides some layout components, a typography system, a color palette, standardized 12 column spacing classes, and some layout classes.
 
+[View the Documentation](https://github.com/uscensusbureau/aqua/blob/main/DOCUMENTATION.md)
+
 The use of Aqua allows for rapid implementation of UX designs and a consistent user experience across all parts of the site (component appearances, interactions, spacing, color palette, etc).
 
 There are many planned updates and improvements, including ultimately making Aqua an NPM package. Those will be coming in future iterations.
