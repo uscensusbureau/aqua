@@ -16,6 +16,10 @@
 
 [Jump to **Utility CSS** section](#utility-section)
 
+### SPACING AND BREAKPOINTS
+
+[Jump to **Spacing and Breakpoints** section](#spacing-section)
+
 ## **COMPONENTS**
 
 ### Form Elements
@@ -1364,7 +1368,7 @@ Used within the **AquaTreeView** component, the AquaTreeViewItem represents a si
 
 `modelValue`: Represents the treeview item data
 
-`branchMixture`:
+`branchMixture`: Used interally for indentation purposes.
 
 `options`: An options object for the treeview item. The default is:
 
@@ -1391,22 +1395,148 @@ checkableBranches: true
 
 ## COLORS
 
-_TODO_
+Provided as SCSS variables as well as exported to JS.
+
+![](/documentation_images/colors.png)
 
 <a id="icons-section"></a>
 
 ## ICONS
 
-_TODO_
+Below is a table of the built-in icons. You can use these with the **AquaIcon** component by specifying the icon name in the `icon` property.
+
+![](/documentation_images/icons.png)
 
 <a id="typography-section"></a>
 
 ## TYPOGRAPHY
 
-_TODO_
+Aqua has styles for heading levels 1-5, as shown below, as well as some custom sizes.
+
+![](/documentation_images/typography.png)
+
+In addition to the above, you can specify the following Aqua CSS class names on H1-H4 tags:
+
+`heading`: Specifies the header should be displayed with an underline beneath the header text
+
+`uppercase`: Displays the header text in all upper case.
+
+`capitalize`: Capitalizes the first letter of each word in the neader
+
+`wrap`: Specifies that the header text is allowed to word wrap
+
+Lastly, you can make any HTML element with text styled to look like an H1-H5 tag with the following CSS classes:
+
+```
+h1, h2, h3, h4, h5
+```
 
 <a id="utility-section"></a>
 
 ## CUSTOM CSS CLASSES
 
-_TODO_
+`aqua-glass`: Gives an element a semi-transparent glasslike effect
+
+`aqua-fullheight`: Styles the element as 100% height
+
+`aqua-fullwidth`: Styles the element as 100% width
+
+`aqua-screenreader-only`: Makes the element only visible to screenreaders
+
+`aqua-relative`: Styles the element as `position: relative`
+
+`aqua-fill-to-parent`: Styles the element as follows:
+
+```
+position: absolute;
+width: 100%;
+height: 100%;
+```
+
+`aqua-pin-to-parent`: Styles the element as follows:
+
+```
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+```
+
+<a id="spacing-section"></a>
+
+## SPACING AND BREAKPOINTS
+
+Aqua offers standardized spacing variables and classes in increments of 4 pixels (0.25rem).
+
+The spacing variables are provided as SCSS variables.
+
+```
+$aqua-spacing0: 0rem;
+$aqua-spacing1: 0.25rem;
+$aqua-spacing2: 0.5rem;
+$aqua-spacing3: 0.75rem;
+$aqua-spacing4: 1rem;
+$aqua-spacing5: 1.25rem;
+$aqua-spacing6: 1.5rem;
+$aqua-spacing7: 1.75rem;
+$aqua-spacing8: 2rem;
+$aqua-spacing9: 2.25rem;
+$aqua-spacing10: 2.5rem;
+$aqua-spacing11: 2.75rem;
+$aqua-spacing12: 3rem;
+$aqua-spacing13: 3.25rem;
+$aqua-spacing14: 3.5rem;
+$aqua-spacing15: 3.75rem;
+$aqua-spacing16: 4rem;
+```
+
+In addition you can add the following CSS classes on any HTML element to provide margins and/or padding.
+
+Syntax:
+
+`m|p` (margin or padding) `-1-12` where the number 1-12 are increments of 4 pixels.
+
+Example:
+
+`m-4`: Specifies margin of 4 (12px)
+
+`p-4`: Specifies padding of 4 (12px)
+
+You can also optionally specify a side as `t|r|b|l` (top, right, bottom, left)
+
+Example:
+
+`ml-2`: Specifies a left margin of 2 (8 pixels)
+
+`pt-2`: Specifies top padding of 2 (8 pixels)
+
+For negative margin, prepend the letter `n` to the number value.
+
+Example:
+
+`mr-n2`: Specifies a right margin of negative 2 (-8 pixels)
+
+##### USING SPACING CLASSES WITH BREAKPOINTS
+
+The following breakpoint values can be applied to the above spacing classes:
+
+```
+  'xs': 0
+  'sm': 600px
+  'md': 960px
+  'lg': 1280px
+  'xl': 1920px
+```
+
+EXAMPLE:
+
+`m-md-4`: Specifies a margin of 4 (12 pixels) at the "medium" breakpoint
+
+Breakpoint and spacing classes can be combined.
+
+EXAMPLE:
+
+```
+class="mr-2 ml-1 mt-sm-2 mt-lg-4"
+```
