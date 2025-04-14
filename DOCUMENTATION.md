@@ -1433,7 +1433,7 @@ h1, h2, h3, h4, h5
 
 <a id="utility-section"></a>
 
-## CUSTOM CSS CLASSES
+## UTILITY CSS CLASSES
 
 `aqua-glass`: Gives an element a semi-transparent glasslike effect
 
