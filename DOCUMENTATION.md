@@ -1411,7 +1411,7 @@ Below is a table of the built-in icons. You can use these with the **AquaIcon** 
 
 ## TYPOGRAPHY
 
-The default font-face for data.census.gov is [Inter](https://fonts.google.com/specimen/Inter).
+The default font-face for Aqua is [Inter](https://fonts.google.com/specimen/Inter).
 
 Aqua has styles for heading levels 1-5, as shown below, as well as some custom sizes.
 
