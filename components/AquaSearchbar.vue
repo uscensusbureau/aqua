@@ -290,7 +290,8 @@ export default {
     'selectMenuItem',
     'selectMenuAppendSlot',
     'selectMenuPrependSlot',
-    'selectRightColSlot'
+    'selectRightColSlot',
+    'onMicrophoneClick'
   ],
   data() {
     return {
@@ -417,6 +418,7 @@ export default {
           recognition.stop()
         }
       }
+      this.$emit('onMicrophoneClick')
     },
     onClickInputLabel(event: MouseEvent) {
       let range
@@ -822,11 +824,6 @@ export default {
       }
       .right-col {
         max-width: toRem(288);
-      }
-      .menu-items {
-        height: 100%;
-        max-height: toRem(300);
-        overflow-y: auto;
       }
     }
     .liveregion {

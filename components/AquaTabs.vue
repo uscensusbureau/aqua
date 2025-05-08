@@ -1,11 +1,5 @@
 <template>
-  <AquaLayout
-    vertical
-    class="aqua-tabs"
-    :class="[{ header }, spacingClasses]"
-    resizable
-    @resize="onResize"
-  >
+  <AquaLayout vertical class="aqua-tabs" :class="[{ header }, spacingClasses]">
     <AquaLayout horizontal justify="start" class="aqua-tabs_tabs">
       <slot></slot>
     </AquaLayout>
@@ -24,6 +18,7 @@ type ValueType = number | string | Record<string, any>
 interface AquaTabsData {
   items: Array<any>
   spacingClasses: Array<string>
+  resizeObserver: ResizeObserver | null
 }
 
 export default {
@@ -37,7 +32,8 @@ export default {
   data: () =>
     ({
       items: [],
-      spacingClasses: []
+      spacingClasses: [],
+      resizeObserver: null
     } as AquaTabsData),
   watch: {
     modelValue: {
@@ -50,25 +46,13 @@ export default {
   mounted() {
     this.SetSpacingClasses()
 
-    // Register all slot children and set initially selected item based on the v-model
-    const tabs = this.$el.querySelectorAll('.aqua-tab')
-    for (let i = 0; i < tabs.length; i++) {
-      const tab = tabs[i]
-      const component = tab.__vue__
-      if (component) {
-        this.items.push(component)
-        if (this.modelValue && component.value === this.modelValue) {
-          this.onItemSelected(this.modelValue)
-        }
-        component.setHeader(this.header)
-
-        // Watch for child tabs being clicked
-        tab.addEventListener('click', (event: MouseEvent) => this.onClickChildTab(event))
-      }
+    this.resizeObserver = new ResizeObserver(() => {
+      this.virtualizeTabs()
+    })
+    // Observe the element for resize
+    if (this.$el) {
+      this.resizeObserver.observe(this.$el.querySelector('.aqua-tabs_tabs'))
     }
-    setTimeout(() => {
-      this.underlineSelected()
-    }, 350)
   },
   beforeUnmount() {
     const tabs = this.$el.querySelectorAll('.aqua-tab')
@@ -78,6 +62,35 @@ export default {
     }
   },
   methods: {
+    virtualizeTabs() {
+      // Unregister any previous tabs
+      if (this.items.length) {
+        for (const item of this.items) {
+          item.$el.removeEventListener('click', (event: MouseEvent) => this.onClickChildTab(event))
+        }
+      }
+      this.items = []
+
+      // Register all slot children and set initially selected item based on the v-model
+      const tabs = this.$el.querySelectorAll('.aqua-tab')
+      for (let i = 0; i < tabs.length; i++) {
+        const tab = tabs[i]
+        const component = tab.__vue__
+        if (component) {
+          this.items.push(component)
+          if (this.modelValue && component.value === this.modelValue) {
+            this.onItemSelected(this.modelValue)
+          }
+          component.setHeader(this.header)
+
+          // Watch for child tabs being clicked
+          tab.addEventListener('click', (event: MouseEvent) => this.onClickChildTab(event))
+        }
+      }
+      this.$nextTick(() => {
+        this.underlineSelected()
+      })
+    },
     onResize() {
       this.underlineSelected()
     },
@@ -126,6 +139,9 @@ export default {
 @use '../aqua-vars.module.scss' as *;
 
 .aqua-tabs {
+  .aqua-tabs_tabs {
+    max-width: fit-content;
+  }
   .aqua-tabs_underline-area {
     position: relative;
     .aqua-tabs_underline {

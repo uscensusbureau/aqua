@@ -33,15 +33,9 @@
     >
       <AquaLayout vertical justify="start" align="start">
         <slot></slot>
-        <AquaLayout
-          v-if="hasButtons"
-          horizontal
-          justify="center"
-          align="center"
-          class="aqua-dialog-button-layout"
-        >
+        <AquaLayout horizontal justify="center" align="center" class="aqua-dialog-button-layout">
           <AquaSpacer v-if="!mobile"></AquaSpacer>
-          <AquaButtonRow>
+          <AquaButtonRow id="aqua-dialog-buttons">
             <slot name="buttons"></slot>
           </AquaButtonRow>
         </AquaLayout>
@@ -56,7 +50,7 @@
         @keydown.enter="onClose"
         @keydown.space="onClose"
       >
-        <AquaIcon icon="close" size="14" :tint="colors.aquaColorPrimary900"></AquaIcon>
+        <AquaIcon icon="close" size="20" :tint="colors.aquaColorPrimary900"></AquaIcon>
       </div>
     </AquaCard>
   </div>
@@ -64,9 +58,11 @@
 
 <script lang="ts">
 import colors from '@aqua/styles/design-system/colors.module.scss'
-
+import { mapStores } from 'pinia'
 import { Spacing } from '../mixins/Spacing.js'
 import type { ComponentObjectPropsOptions } from 'vue'
+import type { FocusID } from '@aqua/store/focusManager'
+import { useFocusStore } from '@aqua/store/focusManager'
 
 interface AquaDialogData {
   valueInternal: boolean
@@ -78,6 +74,7 @@ interface AquaDialogData {
   closeAnimation: boolean
   closeTimer: number
   spacingClasses: Array<string>
+  focusID: FocusID | undefined
 }
 
 export default {
@@ -89,7 +86,10 @@ export default {
     modal: Boolean,
     small: Boolean,
     medium: Boolean,
-    large: Boolean,
+    large: {
+      type: Boolean,
+      default: true
+    },
     xlarge: Boolean,
     mobile: Boolean,
     backgroundColor: {
@@ -112,27 +112,27 @@ export default {
       openTimer: -1,
       closeAnimation: false,
       closeTimer: -1,
-      spacingClasses: []
+      spacingClasses: [],
+      focusID: undefined
     } as AquaDialogData
   },
   computed: {
+    ...mapStores(useFocusStore),
     colors() {
       return colors
-    },
-
-    hasButtons() {
-      return !!this.$slots.buttons
     }
   },
   watch: {
     modelValue(newValue) {
       this.valueInternal = newValue
       if (newValue) {
+        this.focusID = this.focusStore.requestFocus()
         this.$nextTick(() => {
           this.dialogOpenAnimation()
         })
       } else {
         this.dialogCloseAnimation()
+        if (this.focusID) this.focusStore.releaseFocus(this.focusID)
       }
     },
     valueInternal() {
@@ -159,6 +159,10 @@ export default {
         return
       }
 
+      if (this.focusID) {
+        if (!this.focusStore.hasFocus(this.focusID)) return
+      }
+
       const dialogComponent = this.$refs.dialog
         ? (this.$refs.dialog as ComponentObjectPropsOptions)
         : null
@@ -176,7 +180,7 @@ export default {
         // Something outside the dialog was focused.
         // Set focus to the first available element inside the dialog.
         const focusable = dialog.querySelectorAll(
-          '.aqua-button, .aqua-dialog-close-button, [href], [tabindex]:not([tabindex="-1"])'
+          '.aqua-activator, .aqua-dialog-close-button, [href], [tabindex]:not([tabindex="-1"])'
         )
         if (focusable.length && focusable[0]) {
           const element: HTMLElement = focusable[0] as HTMLElement

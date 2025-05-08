@@ -48,7 +48,7 @@
     <slot name="extra"></slot>
 
     <!-- MORE BUTTON -->
-    <div v-show="overflow && isOverflowed" horizontal class="more-button">
+    <div v-show="overflow && isOverflowed" horizontal class="more-button aqua-activator">
       <AquaToolbarButton
         ref="moreButton"
         :label="moreButtonLabel"
@@ -86,6 +86,7 @@
             :active="button.states.selected"
             role="button"
             tabindex="0"
+            class="aqua-activator"
             @click="performAction(button, false)"
             @keydown.enter="performAction(button, false)"
           >

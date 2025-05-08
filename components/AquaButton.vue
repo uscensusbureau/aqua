@@ -3,7 +3,7 @@
     v-if="externalLink"
     :href="(to as string)"
     target="_blank"
-    class="aqua-button"
+    class="aqua-button aqua-activator"
     :class="[{ disabled }, spacingClasses]"
     :tabindex="disabled ? '-1' : '0'"
   >
@@ -12,15 +12,16 @@
   <RouterLink
     v-else-if="link"
     :to="to"
-    class="aqua-button"
+    class="aqua-button aqua-activator"
     :class="[{ disabled }, spacingClasses]"
     :tabindex="disabled ? '-1' : '0'"
+    @click="$emit('click', $event)"
   >
     <slot></slot>
   </RouterLink>
   <button
     v-else
-    class="aqua-button"
+    class="aqua-button aqua-activator"
     :class="[{ disabled }, spacingClasses]"
     :tabindex="disabled ? '-1' : '0'"
     @click="$emit('click', $event)"

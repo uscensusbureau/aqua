@@ -66,7 +66,7 @@
           >
             <AquaIcon
               icon="close"
-              :size="closeIconSize"
+              :size="14"
               :tint="colors.aquaColorPrimary900"
               tint-transition-time="250"
             ></AquaIcon>
@@ -120,20 +120,19 @@
             </div>
           </AquaFlex>
 
-          <!-- aqua-toolbar-button-layout class is required here on the icon for some reason to prevent the popover from closing on click...¯\_(ツ)_/¯ -->
-          <AquaFlex class="aqua-toolbar-button-layout" flex="0">
+          <AquaFlex v-if="clearable" class="aqua-activator" flex="0">
             <div
               :style="{ opacity: hasText ? '1' : '0' }"
               :tabindex="hasText ? '0' : '-1'"
-              class="close aqua-toolbar-button-layout"
+              class="close aqua-activator"
               aria-label="Clear Text"
               @click="onClear"
               @keydown.enter="onClear"
             >
               <AquaIcon
-                class="aqua-toolbar-button-layout"
+                class="aqua-activator"
                 icon="close"
-                :size="10"
+                :size="14"
                 :tint="colors.aquaColorPrimary900"
                 tint-transition-time="250"
               ></AquaIcon>
@@ -219,12 +218,6 @@ export default {
     },
     colors() {
       return colors
-    },
-    closeIconSize() {
-      if (this.mobile) return '12'
-      if (this.secondary) return '8'
-
-      return '9'
     }
   },
   watch: {
@@ -279,28 +272,17 @@ export default {
 </script>
 
 <style lang="scss">
-@use '../aqua-vars.module.scss' as *;
-
-::placeholder {
-  color: $aqua-color-gray-600;
-  opacity: 1;
-}
-::-webkit-input-placeholder {
-  color: $aqua-color-gray-600;
-  opacity: 1;
-}
-::-moz-placeholder {
-  color: $aqua-color-gray-600;
-  opacity: 1;
-}
-:-ms-input-placeholder {
-  color: $aqua-color-gray-600;
-  opacity: 1;
-}
+::placeholder,
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
 :-moz-placeholder {
   color: $aqua-color-gray-600;
   opacity: 1;
 }
+</style>
+
+<style lang="scss" scoped>
 .aqua-text-input {
   &.secondary {
     border: toRem(1) solid $aqua-color-gray-400 !important;

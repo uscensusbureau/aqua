@@ -44,6 +44,7 @@ import AquaTable from './components/AquaTable.vue'
 import AquaTabs from './components/AquaTabs.vue'
 import AquaText from './components/AquaText.vue'
 import AquaTextInput from './components/AquaTextInput.vue'
+import AquaTextArea from './components/AquaTextArea.vue'
 import AquaToggle from './components/AquaToggle.vue'
 import AquaToolbar from './components/AquaToolbar.vue'
 import AquaToolbarButton from './components/AquaToolbarButton.vue'
@@ -52,6 +53,7 @@ import AquaTreeView from './components/AquaTreeView.vue'
 import AquaTreeViewItem from './components/AquaTreeViewItem.vue'
 import AquaEditableLabel from './components/AquaEditableLabel.vue'
 import AquaCheckboxGroup from './components/AquaCheckboxGroup.vue'
+import AquaFlowLayout from './components/AquaFlowLayout.vue'
 
 const AquaComponentLibrary = {
   install(Vue) {
@@ -65,6 +67,7 @@ const AquaComponentLibrary = {
     Vue.component(AquaChips.name, AquaChips)
     Vue.component(AquaCard.name, AquaCard)
     Vue.component(AquaTextInput.name, AquaTextInput)
+    Vue.component(AquaTextArea.name, AquaTextArea)
     Vue.component(AquaDropdown.name, AquaDropdown)
     Vue.component(AquaProgressCircular.name, AquaProgressCircular)
     Vue.component(AquaProgressLinear.name, AquaProgressLinear)
@@ -107,6 +110,7 @@ const AquaComponentLibrary = {
     Vue.component(AquaFileInput.name, AquaFileInput)
     Vue.component(AquaPaginationControls.name, AquaPaginationControls)
     Vue.component(AquaCheckboxGroup.name, AquaCheckboxGroup)
+    Vue.component(AquaFlowLayout.name, AquaFlowLayout)
     Vue.component('DynamicScroller', DynamicScroller)
     Vue.component('DynamicScrollerItem', DynamicScrollerItem)
     Vue.component('RecycleScroller', RecycleScroller)

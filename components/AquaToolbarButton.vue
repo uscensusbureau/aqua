@@ -1,5 +1,8 @@
 <template>
-  <AquaLayout class="aqua-toolbar-button" :class="[{ collapse, stacked }, spacingClasses]">
+  <AquaLayout
+    class="aqua-toolbar-button aqua-activator"
+    :class="[{ collapse, stacked }, spacingClasses]"
+  >
     <AquaLayout
       v-if="label"
       :id="`toolbar-button-${label.toLowerCase().replaceAll(/\W/g, '-')}`"

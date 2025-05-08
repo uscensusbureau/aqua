@@ -5,6 +5,7 @@
     class="aqua-tab"
     :class="[{ selected, disabled, header }, spacingClasses]"
     :tabindex="disabled ? '-1' : '0'"
+    @click="$emit('click', $event)"
     >{{ label }}</RouterLink
   >
   <div

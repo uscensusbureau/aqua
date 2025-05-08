@@ -12,10 +12,14 @@
 
 <script lang="ts">
 import { debounce } from 'lodash-es'
+import { mapStores } from 'pinia'
 import type { ComponentOptionsWithObjectProps } from 'vue'
+import type { FocusID } from '@aqua/store/focusManager'
+import { useFocusStore } from '@aqua/store/focusManager'
 
 interface AquaPopoverData {
   showPopover: boolean
+  focusID: FocusID | undefined
 }
 
 export default {
@@ -38,18 +42,21 @@ export default {
   emits: ['update:modelValue', 'close'],
   data() {
     return {
-      showPopover: false
+      showPopover: false,
+      focusID: undefined
     } as AquaPopoverData
   },
   watch: {
     modelValue(newValue) {
       this.showPopover = newValue
       if (newValue) {
+        this.focusID = this.focusStore.requestFocus()
         this.$nextTick(() => {
           this.drawPopover()
         })
       } else {
         this.$emit('close')
+        if (this.focusID) this.focusStore.releaseFocus(this.focusID)
       }
     },
     positionX: {
@@ -95,6 +102,9 @@ export default {
     window.removeEventListener('focusin', (event: FocusEvent) => this.onFocusIn(event))
     window.removeEventListener('keydown', (event: KeyboardEvent) => this.onEsc(event))
   },
+  computed: {
+    ...mapStores(useFocusStore)
+  },
   methods: {
     onEsc(e: KeyboardEvent) {
       if (this.showPopover && e.key === 'Escape') {
@@ -111,23 +121,10 @@ export default {
       const targetElement = target ? (target as HTMLElement) : null
       if (!targetElement) return
 
-      // TODO: this needs a revamp to properly isolate which events should not close the popover
-      // Need to look at for non-toolbar button click events
-      if (
-        targetElement.classList.contains('aqua-toolbar-button-layout') ||
-        targetElement.classList.contains('aqua-toolbar-button-icon') ||
-        targetElement.classList.contains('aqua-toolbar-button-label') ||
-        // Check for clicks within the toolbar 'More Tools' menu
-        targetElement.classList.contains('aqua-toolbar-menu-icon') ||
-        targetElement.classList.contains('aqua-toolbar-menu-label') ||
-        targetElement.querySelectorAll('.aqua-toolbar-menu-label').length === 1 ||
-        targetElement.classList.contains('overflow-menu-item') ||
-        // Profile visualization options menu button
-        targetElement.classList.contains('aqua-dropdown-menu-button') ||
-        targetElement.classList.contains('aqua-dropdown-menu-button-icon') ||
-        targetElement.classList.contains('aqua-dropdown-menu-button-label')
-      ) {
-        // Clicked the anchor element - return without closing
+      // Check to see if the clicked element is a popover activator
+      const activatorParent = targetElement.closest('.aqua-activator')
+      if (activatorParent || targetElement.classList.contains('aqua-activator')) {
+        // Clicked the activator element - return without closing
         return
       }
 
@@ -151,6 +148,10 @@ export default {
     onFocusIn(event: FocusEvent) {
       if (!event) {
         return
+      }
+
+      if (this.focusID) {
+        if (!this.focusStore.hasFocus(this.focusID)) return
       }
 
       const popover = (this.$refs.popover as ComponentOptionsWithObjectProps)

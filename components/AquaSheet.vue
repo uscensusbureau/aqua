@@ -56,6 +56,9 @@ import colors from '@aqua/styles/design-system/colors.module.scss'
 
 import { Spacing } from '../mixins/Spacing.js'
 import type { ComponentOptionsWithObjectProps } from 'vue'
+import { mapStores } from 'pinia'
+import type { FocusID } from '@aqua/store/focusManager'
+import { useFocusStore } from '@aqua/store/focusManager'
 
 interface AquaSheetData {
   valueInternal: boolean
@@ -65,6 +68,7 @@ interface AquaSheetData {
   closeAnimation: boolean
   closeTimer: number
   spacingClasses: Array<string>
+  focusID: FocusID | undefined
 }
 
 export default {
@@ -87,10 +91,13 @@ export default {
       openTimer: -1,
       closeAnimation: false,
       closeTimer: -1,
-      spacingClasses: []
+      spacingClasses: [],
+      focusID: undefined
     } as AquaSheetData
   },
   computed: {
+    ...mapStores(useFocusStore),
+
     noLeft() {
       return this.left === undefined || this.left === '0' || this.left === '0px'
     },
@@ -102,11 +109,13 @@ export default {
     modelValue(newValue) {
       this.valueInternal = newValue
       if (newValue) {
+        this.focusID = this.focusStore.requestFocus()
         this.$nextTick(() => {
           this.sheetOpenAnimation()
         })
       } else {
         this.sheetCloseAnimation()
+        if (this.focusID) this.focusStore.releaseFocus(this.focusID)
       }
     },
     valueInternal() {
@@ -128,6 +137,10 @@ export default {
     onFocusIn(event: FocusEvent) {
       if (!event) {
         return
+      }
+
+      if (this.focusID) {
+        if (!this.focusStore.hasFocus(this.focusID)) return
       }
 
       // If there is a dialog present, let it handle tabbing

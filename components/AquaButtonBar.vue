@@ -48,7 +48,7 @@
         <div
           v-if="overflowCount > 0 && !mobile"
           ref="moreButton"
-          class="button more-button aqua-text-caption"
+          class="button more-button aqua-text-caption aqua-activator"
           tabindex="0"
           :aria-label="moreButtonLabel"
           @click="onClickMore"

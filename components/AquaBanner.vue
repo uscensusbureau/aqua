@@ -20,10 +20,8 @@
       <AquaFlex flex="1">
         <AquaLayout horizontal align="start" justify="center" class="aqua-banner_inner-layout">
           <!-- icon -->
-          <AquaFlex flex="0" class="icon-wrapper">
-            <AquaLayout justify="center" align="center" class="icon-layout">
-              <AquaIcon class="icon" :icon="type" size="24" :tint="fgColor" aria-label></AquaIcon>
-            </AquaLayout>
+          <AquaFlex flex="0">
+            <AquaIcon class="icon" :icon="type" size="24" :tint="fgColor" aria-label></AquaIcon>
           </AquaFlex>
           <!-- text -->
           <AquaFlex flex="1" class="message">
@@ -130,19 +128,12 @@ export default {
   color: $aqua-color-gray-800;
   .bar {
     width: toRem(6);
-    min-height: toRem(44);
   }
-  .icon-wrapper {
-    height: 100%;
-    .icon-layout {
-      height: 100%;
-      .icon {
-        position: relative;
-        top: 0;
-        width: toRem(24);
-        margin-right: $aqua-spacing2;
-      }
-    }
+  .icon {
+    position: relative;
+    top: toRem(2);
+    width: toRem(24);
+    margin-right: $aqua-spacing2;
   }
   .message {
     position: relative;
@@ -152,7 +143,7 @@ export default {
   }
   .close {
     cursor: pointer;
-    margin-top: toRem(8);
+    margin-top: toRem(6);
   }
   .aqua-banner_outer-layout .aqua-banner_inner-layout {
     height: 100%;
