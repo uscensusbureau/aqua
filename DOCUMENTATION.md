@@ -86,6 +86,7 @@
 ### Layout Components
 
 - [AquaLayout](#AquaLayout)
+- [AquaFlowLayout](#AquaFlowLayout)
 - [AquaFlex](#AquaFlex)
 - [AquaNavbar](#AquaNavbar)
 - [AquaSpacer](#AquaSpacer)
@@ -547,17 +548,29 @@ AquaLayout is a layout component that abstracts a CSS flex parent. It contains m
 
 `mobile`: If enabled, `alignMobile` and `justifyMobile` will be used instead of `align` and `justify`
 
-`resizable`: If enabled, the component will emit `resize` when the component is resized. (_**Not currently working**_)
-
 `alignMobile`: The `align` value to use when `mobile` is enabled.
 
 `justifyMobile`: The `justify` value to use when `mobile` is enabled.
 
 `tag`: The HTML tag value to use for the component. Defaults to `<div>`.
 
-#### Events
+<a id="AquaFlowLayout"></a>
 
-`resize`: emitted when the component is resized. (_**Not currently working**_)
+## AquaFlowLayout
+
+AquaFlowLayout is a layout component that allows for an array of uniformly-sized tiles or other elements to be distributed evenly starting from an upper-left position, flowing horizontally to the right, and wrapping to the next line when necessary. The configurable gutter between items is set to the specified value and is only applied between side-by-side elements. There is also a configurable vertical gutter for the row spacing. The component will calculate the number of elements that will fit on each row and the elements will flex to fill the remaining space.
+
+#### Properties
+
+`items`: Array of items to layout
+
+`min-item-width`: Specifies the minimum width for the items. This is used to determine the number of items to place per row.
+
+`item-h-gap`: Specifies the horizontal gutter between elements / columns
+
+`item-v-gap`: Specifies the vertical gutter between rows
+
+![](/documentation_images/AquaFlowLayout.png)
 
 <a id="AquaIcon"></a>
 
