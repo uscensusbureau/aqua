@@ -49,7 +49,9 @@
           class="nowrap"
           :style="`color: ${textColor}`"
         >
-          <slot name="selection" :item="items[selectedIndex]"></slot>
+          <slot name="selection" :item="items[selectedIndex]">
+            <div>{{ items[selectedIndex] }}</div>
+          </slot>
         </AquaFlex>
         <AquaFlex v-else flex="1" class="placeholder">
           <div>{{ placeholder }}</div>
@@ -57,7 +59,9 @@
       </template>
       <template v-else>
         <AquaFlex v-if="items" flex="1" class="nowrap" :style="`color: ${textColor}`">
-          <slot name="selection" :item="items[selectedIndex]"></slot>
+          <slot name="selection" :item="items[selectedIndex]">
+            <span>{{ items[selectedIndex] }}</span>
+          </slot>
         </AquaFlex>
       </template>
       <AquaFlex flex="0">
@@ -100,7 +104,9 @@
           @click="onClickMenuItem(item, index)"
           @keydown.enter="onClickMenuItem(item, index)"
         >
-          <slot name="item" :item="item"></slot>
+          <slot name="item" :item="item">
+            <span>{{ item }}</span>
+          </slot>
         </AquaMenuItem>
       </template>
       <AquaScroller
@@ -118,7 +124,9 @@
           @click="onClickMenuItem(slotProps.scrollItem, slotProps.scrollIndex)"
           @keydown.enter="onClickMenuItem(slotProps.scrollItem, slotProps.scrollIndex)"
         >
-          <slot name="item" :item="slotProps.scrollItem"></slot>
+          <slot name="item" :item="slotProps.scrollItem">
+            <span>{{ slotProps.scrollItem }}</span>
+          </slot>
         </AquaMenuItem>
       </AquaScroller>
     </AquaCard>

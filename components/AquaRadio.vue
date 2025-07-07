@@ -9,17 +9,24 @@
     @click="onClick"
     @keydown.enter="onClick"
   >
-    <AquaFlex flex="0" class="checkOuter">
-      <AquaCircularFocusIndicator
-        class="focus-indicator"
-        :active="checkedInternal"
-        :offset-x="`${9 / 16}rem`"
-        :offset-y="`${9 / 16}rem`"
-        :size="`${31 / 16}rem`"
-      ></AquaCircularFocusIndicator>
-      <div class="check" :class="{ checked: checkedInternal }">
-        <input ref="radio" type="radio" tabindex="-1" />
-      </div>
+    <AquaFlex flex="0" class="checkOuter aqua-fullheight">
+      <AquaLayout justify="center" align="center" class="check-layout aqua-fullheight">
+        <AquaCircularFocusIndicator
+          class="focus-indicator"
+          :active="checkedInternal"
+          :offset-x="`${9 / 16}rem`"
+          :offset-y="`${9 / 16}rem`"
+          :size="`${31 / 16}rem`"
+        ></AquaCircularFocusIndicator>
+        <AquaLayout
+          justify="center"
+          align="center"
+          class="check aqua-fullheight aqua-fullwidth"
+          :class="{ checked: checkedInternal }"
+        >
+          <input ref="radio" type="radio" tabindex="-1" />
+        </AquaLayout>
+      </AquaLayout>
     </AquaFlex>
     <AquaFlex flex="1">
       <div class="radio-label">{{ label }}</div>
@@ -119,8 +126,6 @@ export default {
     transform: scale(0);
   }
   .check {
-    width: toRem(17);
-    height: toRem(17);
     background-color: $aqua-color-white;
     border: toRem(1) solid $aqua-color-steel-400;
     position: relative;
@@ -129,12 +134,12 @@ export default {
     &:after {
       position: absolute;
       content: '';
-      width: toRem(10);
-      height: toRem(10);
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      top: toRem(2.5);
-      left: toRem(2.5);
       background-color: $aqua-color-vivid-blue;
+      border: toRem(3) solid $aqua-color-white;
       transform: scale(0);
       transition: all 250ms;
     }
@@ -159,6 +164,11 @@ export default {
   .radio-label {
     text-align: left;
     margin-left: $aqua-spacing2;
+  }
+  .check,
+  .check-layout {
+    width: toRem(17);
+    height: toRem(17);
   }
 }
 </style>

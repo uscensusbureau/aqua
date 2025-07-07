@@ -11,7 +11,7 @@
           relativePosition,
           openAnimation,
           closeAnimation,
-          wFull
+          fullWidth
         },
         spacingClasses
       ]"
@@ -31,7 +31,7 @@
           relativePosition,
           openAnimation,
           closeAnimation,
-          wFull
+          fullWidth
         },
         spacingClasses
       ]"
@@ -85,7 +85,7 @@ export default {
       type: Boolean,
       default: true
     },
-    wFull: {
+    fullWidth: {
       type: Boolean,
       default: false
     }
@@ -160,7 +160,7 @@ export default {
 @use '../aqua-vars.module.scss' as *;
 
 .aqua-snackbar {
-  &.wFull {
+  &.fullWidth {
     width: 100%;
   }
   &.relativePosition {

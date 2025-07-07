@@ -115,6 +115,7 @@ export default {
       this.$emit('update:modelValue', value)
     },
     underlineSelected() {
+      if (!this.$refs.underline || !this.$refs.underlineArea) return
       for (let i = 0; i < this.items.length; i++) {
         const item = this.items[i]
         if (item.$props.value === this.modelValue) {

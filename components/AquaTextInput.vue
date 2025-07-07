@@ -66,7 +66,7 @@
           >
             <AquaIcon
               icon="close"
-              :size="14"
+              :size="12"
               :tint="colors.aquaColorPrimary900"
               tint-transition-time="250"
             ></AquaIcon>
@@ -132,7 +132,7 @@
               <AquaIcon
                 class="aqua-activator"
                 icon="close"
-                :size="14"
+                :size="12"
                 :tint="colors.aquaColorPrimary900"
                 tint-transition-time="250"
               ></AquaIcon>

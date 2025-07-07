@@ -32,6 +32,7 @@
             v-if="closeable"
             flex="0"
             tabindex="0"
+            class="aqua-fullheight"
             @click="$emit('close')"
             @keydown.enter="$emit('close')"
           >
@@ -137,13 +138,14 @@ export default {
   }
   .message {
     position: relative;
-    top: toRem(6);
-    margin-right: $aqua-spacing2;
+    top: toRem(4.5);
+    margin-right: $aqua-spacing4;
     margin-bottom: $aqua-spacing2;
   }
   .close {
     cursor: pointer;
-    margin-top: toRem(6);
+    position: relative;
+    top: toRem(1);
   }
   .aqua-banner_outer-layout .aqua-banner_inner-layout {
     height: 100%;

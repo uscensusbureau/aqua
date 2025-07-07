@@ -50,7 +50,7 @@
         @keydown.enter="onClose"
         @keydown.space="onClose"
       >
-        <AquaIcon icon="close" size="20" :tint="colors.aquaColorPrimary900"></AquaIcon>
+        <AquaIcon icon="close" size="16" :tint="colors.aquaColorPrimary900"></AquaIcon>
       </div>
     </AquaCard>
   </div>
