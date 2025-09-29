@@ -24,10 +24,12 @@
           class="focus-indicator"
           :style="{ left: sliderXPos }"
           :active="valueInternal"
-          :offset-x="`${7 / 16}rem`"
-          :offset-y="`${7 / 16}rem`"
+          :offset-x="`${9 / 16}rem`"
+          :offset-y="`${10 / 16}rem`"
           :size="`${30 / 16}rem`"
         ></AquaCircularFocusIndicator>
+        <span :class="{ show: !dragging && !valueInternal }" class="state-label off">OFF</span>
+        <span :class="{ show: !dragging && valueInternal }" class="state-label on">ON</span>
         <div ref="slider" class="slider" :style="{ left: sliderXPos }"></div>
       </div>
       <div v-if="labelPosition !== 'left'" class="toggle-label">
@@ -57,7 +59,7 @@ export default {
       dragging: false,
       wasDragged: false,
       dragXPos: 0,
-      ON_X_POS: 10,
+      ON_X_POS: 19,
       spacingClasses: []
     }
   },
@@ -66,7 +68,7 @@ export default {
       this.valueInternal = newValue
     },
     valueInternal() {
-      this.sliderXPos = this.valueInternal ? this.ON_X_POS / 16 + 'rem' : '0'
+      this.sliderXPos = this.valueInternal ? this.ON_X_POS + 'px' : '1px'
       ;(this.$refs.liveregion as HTMLDivElement).innerText = `${this.label}. toggle switch. ${
         this.valueInternal ? 'on' : 'off'
       }`
@@ -131,7 +133,7 @@ export default {
           x = this.ON_X_POS
           this.valueInternal = true
         }
-        this.sliderXPos = x / 16 + 'rem'
+        this.sliderXPos = x + 'px'
       } else {
         // wasn't dragged - treat it as a click event
         this.valueInternal = !this.valueInternal
@@ -160,13 +162,13 @@ export default {
         let x = event.clientX - componentLeft - 7
 
         // keep in-bounds
-        if (x < 0) {
-          x = 0
+        if (x < 1) {
+          x = 1
         } else if (x > this.ON_X_POS) {
           x = this.ON_X_POS
         }
 
-        this.sliderXPos = x / 16 + 'rem'
+        this.sliderXPos = x + 'px'
       }
     }
   }
@@ -176,9 +178,9 @@ export default {
 <style scoped lang="scss">
 @use '../aqua-vars.module.scss' as *;
 
-$switch-width: toRem(24);
-$switch-height: toRem(14);
-$border-radius: toRem(7); // $switch-height/2
+$switch-width: toRem(40);
+$switch-height: toRem(20);
+$border-radius: toRem(10); // $switch-height/2
 
 .AquaToggle {
   -webkit-box-align: start;
@@ -253,14 +255,34 @@ $border-radius: toRem(7); // $switch-height/2
       }
       .slider {
         position: absolute;
-        top: 0;
+        top: toRem(1);
         left: 0;
-        width: $switch-height;
-        height: $switch-height;
+        width: calc($switch-height - toRem(2));
+        height: calc($switch-height - toRem(2));
         border-radius: $border-radius;
         background-color: $aqua-color-white;
-        border: toRem(1) solid $aqua-color-steel-300;
+        border: toRem(2) solid $aqua-color-steel-300;
         transition: all 100ms;
+      }
+      .state-label {
+        line-height: 1rem;
+        color: $aqua-color-white;
+        font-size: toRem(8);
+        user-select: none;
+        transition: opacity 500ms linear;
+        opacity: 0;
+        position: absolute;
+        top: toRem(2.2);
+        font-weight: bold;
+        &.off {
+          left: toRem(20);
+        }
+        &.on {
+          left: toRem(5);
+        }
+        &.show {
+          opacity: 1;
+        }
       }
     }
     .toggle-label {

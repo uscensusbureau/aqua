@@ -9,7 +9,6 @@
     tabindex="0"
     @keydown.enter.stop.prevent="onEnter"
   >
-    <!-- NOTE: THIS IS USING THE DEPRECATED SYNTAX FOR NAMED SLOTS AS EDDE IS NOT YET ON VUE 3 -->
     <AquaLayout vertical justify="start" class="aqua-chip_icon-area">
       <slot name="prepend"></slot>
     </AquaLayout>

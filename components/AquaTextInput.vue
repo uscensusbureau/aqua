@@ -40,8 +40,9 @@
             ref="input"
             :class="{ 'justify-right': justifyRight }"
             :type="numeric ? 'number' : 'text'"
-            min="0"
-            max="100"
+            :min="min"
+            :max="max"
+            :maxlength="maxLength"
             :placeholder="hasText ? '' : placeholder"
             :aria-label="ariaLabel"
             tabindex="0"
@@ -202,6 +203,18 @@ export default {
     numeric: {
       type: Boolean,
       default: false
+    },
+    max: {
+      type: Number,
+      default: 100
+    },
+    min: {
+      type: Number,
+      default: 0
+    },
+    maxLength: {
+      type: Number,
+      default: 524288 // the default value for the <input> HTML element
     }
   },
   emits: ['update:modelValue', 'enter', 'clear', 'focus', 'blur', 'previous', 'next'],

@@ -57,8 +57,6 @@
         tabindex="0"
         @click="onMoreButton"
         @keydown.enter="onMoreButton"
-        @keydown.down="onDownArrow"
-        @keydown.up="onUpArrow"
       ></AquaToolbarButton>
     </div>
 
@@ -75,6 +73,9 @@
       :position-x="positionX"
       justify="left"
       :mobile="mobile"
+      @keydown.down="onDownArrow"
+      @keydown.up="onUpArrow"
+      @keydown.enter="onEnter"
       @close="closeDropdown($event)"
     >
       <AquaLayout vertical align="stretch" justify="center">
@@ -88,7 +89,7 @@
             tabindex="0"
             class="aqua-activator"
             @click="performAction(button, false)"
-            @keydown.enter="performAction(button, false)"
+            @keydown.enter.capture="performAction(button, false)"
           >
             <AquaLayout horizontal align="start" justify="start">
               <AquaIcon
@@ -248,6 +249,8 @@ interface AquaToolbarButtonType {
   states: Record<string, any>
   label: string
   hasSubview: boolean
+  icon: string
+  count: number
   action: (buttonEl: ComponentOptionsWithObjectProps, fromMobileMenu: boolean) => void
 }
 
@@ -337,7 +340,7 @@ export default {
       }
       this.calculateVisibleButtons()
     } else {
-      this.buttonDisplay.visible = this.buttons as Array<ComponentOptionsWithObjectProps>
+      this.buttonDisplay.visible = this.buttons as Array<AquaToolbarButtonType>
     }
   },
   beforeUnmount() {
@@ -403,6 +406,21 @@ export default {
       if (this.overflow) {
         // Navigate up through the menu items
         this.prevMenuItem((this.$refs.menu as ComponentOptionsWithObjectProps).$el)
+      }
+    },
+
+    onEnter() {
+      const allButtons = (this.$refs.menu as ComponentOptionsWithObjectProps).$el.querySelectorAll(
+        '.aqua-menu-item'
+      )
+      const highlightedButton = (
+        this.$refs.menu as ComponentOptionsWithObjectProps
+      ).$el.querySelector('.aqua-menu-item.highlighted')
+      for (let i = 0; i < allButtons.length; i++) {
+        if (allButtons[i] === highlightedButton) {
+          this.performAction(this.buttonDisplay.overflow[i], this.mobile)
+          break
+        }
       }
     },
 

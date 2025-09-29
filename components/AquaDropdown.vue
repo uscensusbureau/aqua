@@ -141,6 +141,8 @@ import colors from '@aqua/styles/design-system/colors.module.scss'
 import { MenuKeyboardNavigation } from '../mixins/MenuKeyboardNavigation.js'
 import { Spacing } from '../mixins/Spacing.js'
 
+import { aquaRelativePosition } from '../service/position'
+
 interface AquaDropdownData {
   displayText: string
   selectedIndex: number
@@ -278,52 +280,22 @@ export default {
         return
       }
 
+      // Open the dropdown
+      this.showMenu = true
+
+      // Position the dropdown
       const labelHeight =
         this.label && this.label.trim().length
           ? (this.$refs.label as HTMLDivElement).clientHeight + 4
           : 0
-      const elRect = this.$el.getBoundingClientRect()
-      const menuComponent = this.$refs.menu as ComponentObjectPropsOptions
-      const menuElement = menuComponent.$el ? (menuComponent.$el as HTMLElement) : null
-      if (menuElement) menuElement.style.left = elRect.left + 'px'
 
-      let height = 0
-      if (this.bottomAlignDropdown) {
-        const activatorComponent = this.$refs.activator as ComponentObjectPropsOptions
-        const activatorElement = activatorComponent.$el
-          ? (activatorComponent.$el as HTMLElement)
-          : null
-        if (activatorElement) height = activatorElement.offsetHeight + 6
+      const menuEl = (this.$refs.menu as ComponentObjectPropsOptions).$el as HTMLElement
+      if (menuEl) {
+        this.$nextTick(() => {
+          aquaRelativePosition(this.$el, menuEl, 'below', labelHeight + 6)
+          this.$emit('activate', this.$refs.menu)
+        })
       }
-
-      if (menuElement) {
-        menuElement.style.top = elRect.top + labelHeight + height + 'px'
-        menuElement.style.minWidth = this.$el.clientWidth + 'px'
-      }
-
-      this.showMenu = true
-
-      // Ensure the top and bottom of the dropdown menu stay on screen
-      this.$nextTick(() => {
-        if (this.searchable && menuElement) {
-          const searchbarRect = menuElement.querySelector('.searchbar')?.getBoundingClientRect()
-          if (searchbarRect) this.menuItemsHeight = `calc(18.75rem - ${searchbarRect.height}px)`
-        }
-
-        if (menuElement) {
-          const menuRect = menuElement.getBoundingClientRect()
-          const menuHeight = menuRect.height
-          const menuBottom = menuRect.top + menuRect.height
-          const windowHeight = document.documentElement.clientHeight
-          if (menuHeight > windowHeight) {
-            menuElement.style.top = '0'
-            menuElement.style.maxHeight = windowHeight + 'px'
-          } else if (menuBottom > windowHeight) {
-            menuElement.style.top = windowHeight - menuHeight + 'px'
-          }
-        }
-        this.$emit('activate', menuElement)
-      })
     },
     onClickMenuItem(item: any, index: number) {
       this.filteredSelectedIndex = index

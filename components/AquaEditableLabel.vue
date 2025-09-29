@@ -57,7 +57,13 @@
       >
         <AquaIcon icon="reset" size="20" :tint="colors.aquaColorVividBlue"></AquaIcon></AquaFlex
     ></AquaLayout>
-    <AquaTooltip v-show="invalidInputMsg !== ''" class="invalid-input">
+    <AquaTooltip
+      orientation="below"
+      parent-selector=".AquaEditableLabel"
+      :gap="10"
+      v-model="tooltipModel"
+      class="invalid-input"
+    >
       {{ invalidInputMsg }}
     </AquaTooltip>
   </AquaLayout>
@@ -76,6 +82,7 @@ interface EditableLabelData {
   invalidInputMsg: string
   deletedChars: Array<string>
   inputFocused: boolean
+  tooltipModel: boolean
 }
 export default {
   name: 'AquaEditableLabel',
@@ -118,7 +125,8 @@ export default {
       leftPosition: '',
       invalidInputMsg: '',
       deletedChars: [],
-      inputFocused: false
+      inputFocused: false,
+      tooltipModel: false
     } as EditableLabelData
   },
   watch: {
@@ -133,7 +141,7 @@ export default {
       return colors
     },
     timer() {
-      return this.invalidInputMsg !== '' ? 4000 : 0
+      return this.tooltipModel ? 4000 : 0
     }
   },
   mounted() {
@@ -191,7 +199,7 @@ export default {
     resetValues() {
       //wait to reset all the values so it can auto dismiss the tooltip, if any
       setTimeout(() => {
-        this.invalidInputMsg = ''
+        this.tooltipModel = false
         this.editing = false
         this.$emit('endEdit')
         this.deletedChars = []
@@ -221,8 +229,7 @@ export default {
         ;(this.$refs.input as ComponentOptionsWithObjectProps).value = this.label
         this.$emit('update:modelValue', this.label)
         this.$emit('reset')
-
-        this.invalidInputMsg = ''
+        this.tooltipModel = false
       })
     },
     /**
@@ -240,6 +247,7 @@ export default {
       })
 
       if (this.deletedChars.length > 0) {
+        this.tooltipModel = true
         this.invalidInputMsg = `The following characters were removed from your title: ${this.deletedChars.join(
           ''
         )}. Please only use alphanumeric characters or "${this.allowedCharactersString}".`
@@ -254,7 +262,7 @@ export default {
           )}px`
         }
       } else {
-        this.invalidInputMsg = ''
+        this.tooltipModel = false
       }
 
       this.valueInternal = value
@@ -270,6 +278,7 @@ export default {
       this.$emit('update:modelValue', this.valueInternal)
 
       this.invalidInputMsg = `Sorry, only ${this.maxCharacterCount} characters allowed for this title.`
+      this.tooltipModel = true
     },
 
     /**
@@ -337,9 +346,7 @@ export default {
   }
 
   .invalid-input {
-    font-size: toRem(12);
-    top: 2.5rem;
-    left: v-bind('leftPosition');
+    padding: $aqua-spacing2;
   }
 }
 </style>

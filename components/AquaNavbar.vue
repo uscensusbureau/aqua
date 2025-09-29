@@ -11,7 +11,6 @@
       <slot></slot>
     </AquaLayout>
     <AquaLayout class="hLayout" horizontal align="stretch" justify="start">
-      <!-- NOTE: THIS IS USING THE DEPRECATED SYNTAX FOR NAMED SLOTS AS EDDE IS NOT YET ON VUE 3 -->
       <slot name="extended"></slot>
     </AquaLayout>
   </AquaLayout>

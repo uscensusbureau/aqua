@@ -30,7 +30,6 @@ interface AquaChipsData {
   spacingClasses: Array<string>
   numChipsToShow: number
   overflow: boolean
-  resizeObserver: ResizeObserver | null
 }
 
 export default {
@@ -49,8 +48,7 @@ export default {
     return {
       spacingClasses: [],
       numChipsToShow: 0,
-      overflow: false,
-      resizeObserver: null
+      overflow: false
     } as AquaChipsData
   },
   computed: {

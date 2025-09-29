@@ -107,8 +107,9 @@ function scrollHighlightedIntoView(menuElement) {
   }
 
   const rect = highlighted.getBoundingClientRect()
+  const menuRect = menuElement.getBoundingClientRect()
   // When the element is fully visible, do nothing
-  if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+  if (rect.top >= menuRect.top && rect.bottom <= menuRect.bottom) {
     return
   }
 

@@ -32,7 +32,7 @@
         ref="input"
         class="textarea"
         :class="{ autoGrow }"
-        :style="{ height: autoGrow ? calculatedHeight + 'px' : 'auto' }"
+        :style="{ height: autoGrow || resizeable ? calculatedHeight + 'px' : 'auto' }"
         spellCheck="false"
         :rows="rowsToDisplay"
         :maxlength="maxlength"
@@ -83,6 +83,15 @@
         <AquaFlex class="append-slot"><slot name="append"></slot></AquaFlex>
       </AquaLayout>
     </AquaFlex>
+    <div
+      v-if="resizeable && !autoGrow"
+      class="resizer"
+      ref="resizer"
+      @mousedown="onResizeMouseDown"
+      @touchstart="onResizeTouchStart"
+    >
+      <AquaIcon icon="resize" size="20" :tint="colors.aquaColorPrimary400"></AquaIcon>
+    </div>
   </AquaLayout>
 </template>
 
@@ -96,6 +105,9 @@ interface AquaTextInputData {
   calculatedHeight: number
   calculatedRows: number
   spacingClasses: Array<string>
+  resizing: boolean
+  resizeLastPosX: number
+  resizeLastPosY: number
 }
 
 export default {
@@ -126,6 +138,10 @@ export default {
     autoGrow: {
       type: Boolean,
       default: false
+    },
+    resizeable: {
+      type: Boolean,
+      default: false
     }
   },
   emits: ['update:modelValue', 'enter', 'clear', 'focus', 'blur'],
@@ -133,9 +149,12 @@ export default {
     return {
       colors,
       inputFocused: false,
-      calculatedHeight: 0,
+      calculatedHeight: 50,
       calculatedRows: this.rows,
-      spacingClasses: []
+      spacingClasses: [],
+      resizing: false,
+      resizeLastPosX: 0,
+      resizeLastPosY: 0
     } as AquaTextInputData
   },
   computed: {
@@ -156,6 +175,17 @@ export default {
     this.SetSpacingClasses()
     if (this.modelValue) (this.$refs.input as HTMLTextAreaElement).value = this.modelValue
     this.calculateHeight()
+    // For resizer support
+    document.addEventListener('mousemove', this.onResizeMouseMove)
+    document.addEventListener('mouseup', this.onResizeMouseUp)
+    document.addEventListener('touchmove', this.onResizeTouchMove)
+    document.addEventListener('touchend', this.onResizeTouchEnd)
+  },
+  beforeUnmount() {
+    document.removeEventListener('mousemove', this.onResizeMouseMove)
+    document.removeEventListener('mouseup', this.onResizeMouseUp)
+    document.removeEventListener('touchmove', this.onResizeTouchMove)
+    document.removeEventListener('touchend', this.onResizeTouchEnd)
   },
   methods: {
     calculateHeight() {
@@ -229,6 +259,82 @@ export default {
       ;(this.$refs.measure as HTMLTextAreaElement).value = (
         this.$refs.input as HTMLTextAreaElement
       ).value
+    },
+    onResizeMouseDown() {
+      if (!this.resizing) {
+        this.resizing = true
+      }
+    },
+    onResizeMouseMove(event: MouseEvent) {
+      if (this.autoGrow) return
+      if (this.resizing) {
+        const offsetX = event.movementX
+        const offsetY = event.movementY
+
+        const elRect = this.$el.getBoundingClientRect()
+
+        let newWidth = elRect.width + offsetX
+        let newHeight = elRect.height + offsetY
+
+        if (newWidth < 50) {
+          newWidth = 50
+        }
+        if (newHeight < 50) {
+          newHeight = 50
+        }
+
+        this.$el.style.width = newWidth + 'px'
+        this.$el.style.height = newHeight + 'px'
+
+        this.calculatedHeight = newHeight - 8
+      }
+    },
+    onResizeMouseUp() {
+      if (this.autoGrow) return
+      if (this.resizing) {
+        this.resizing = false
+      }
+    },
+    onResizeTouchStart(event: TouchEvent) {
+      if (this.autoGrow) return
+      if (!this.resizing) {
+        this.resizing = true
+        this.resizeLastPosX = event.touches[0].screenX
+        this.resizeLastPosY = event.touches[0].screenY
+      }
+    },
+    onResizeTouchMove(event: TouchEvent) {
+      if (this.autoGrow) return
+      if (this.resizing) {
+        const diffX = event.touches[0].screenX - this.resizeLastPosX
+        const diffY = event.touches[0].screenY - this.resizeLastPosY
+
+        const elRect = this.$el.getBoundingClientRect()
+
+        let newWidth = elRect.width + diffX
+        let newHeight = elRect.height + diffY
+
+        if (newWidth < 50) {
+          newWidth = 50
+        }
+        if (newHeight < 50) {
+          newHeight = 50
+        }
+
+        this.$el.style.width = newWidth + 'px'
+        this.$el.style.height = newHeight + 'px'
+
+        this.resizeLastPosX = event.touches[0].screenX
+        this.resizeLastPosY = event.touches[0].screenY
+
+        this.calculatedHeight = newHeight - 8
+      }
+    },
+    onResizeTouchEnd() {
+      if (this.autoGrow) return
+      if (this.resizing) {
+        this.resizing = false
+      }
     }
   }
 }
@@ -268,10 +374,9 @@ export default {
   .textarea {
     width: 100%;
     max-width: 100%;
-    resize: none;
     white-space: pre-wrap;
     padding-right: 0.6rem;
-    margin: 0.4rem;
+    margin: $aqua-spacing1;
     overflow-y: auto;
     border: none;
     outline: none;
@@ -282,6 +387,7 @@ export default {
     background-color: transparent;
     border: none;
     outline: none;
+    resize: none;
     &.autoGrow {
       overflow: hidden;
     }
@@ -324,6 +430,12 @@ export default {
     &.outlined {
       margin-bottom: toRem(4);
     }
+  }
+  .resizer {
+    position: absolute;
+    right: toRem(-2);
+    bottom: toRem(-4);
+    cursor: nwse-resize;
   }
 }
 </style>
